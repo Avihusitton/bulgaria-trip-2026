@@ -3,7 +3,7 @@ import {
   Plane, Home, Car, Bike, Waves, Phone, FileText, CheckSquare, 
   Copy, Check, AlertTriangle, ExternalLink, MessageSquare, 
   Navigation, ShieldAlert, Sparkles, Clock, MapPin, Upload, Mail, ShieldCheck,
-  CreditCard, Wallet
+  CreditCard, Wallet, Download, Eye, Paperclip, FileCheck
 } from "lucide-react";
 import { 
   FLIGHTS, ACCOMMODATION, CAR_RENTAL, BIKES_INFO, SPA_PULSE_THERME, 
@@ -19,6 +19,46 @@ export default function MoreTab({
 }) {
   const [activeSection, setActiveSection] = useState("flights");
   const [copiedCode, setCopiedCode] = useState(false);
+  const [uploadedFiles, setUploadedFiles] = useState(() => {
+    try {
+      const saved = localStorage.getItem("bulgaria_trip_custom_docs");
+      if (saved) return JSON.parse(saved);
+    } catch (e) {}
+    return {};
+  });
+
+  const handleFileUpload = (docKey, e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const dataUrl = event.target.result;
+      const updated = { 
+        ...uploadedFiles, 
+        [docKey]: { 
+          name: file.name, 
+          url: dataUrl, 
+          uploadedAt: new Date().toLocaleDateString("he-IL") 
+        } 
+      };
+      setUploadedFiles(updated);
+      try {
+        localStorage.setItem("bulgaria_trip_custom_docs", JSON.stringify(updated));
+      } catch (err) {
+        console.warn("Storage quota exceeded", err);
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleRemoveUploadedFile = (docKey) => {
+    const updated = { ...uploadedFiles };
+    delete updated[docKey];
+    setUploadedFiles(updated);
+    try {
+      localStorage.setItem("bulgaria_trip_custom_docs", JSON.stringify(updated));
+    } catch (err) {}
+  };
 
   const copyBookingCode = () => {
     navigator.clipboard.writeText(FLIGHTS.bookingCode);
@@ -130,6 +170,30 @@ export default function MoreTab({
               <div className="text-[11px] text-slate-600 bg-slate-50 p-2 rounded-xl">
                 🧳 <b>כבודה:</b> {FLIGHTS.outbound.luggage}
               </div>
+
+              {/* Quick Action PDF Buttons */}
+              <div className="grid grid-cols-2 gap-2 pt-1 border-t border-slate-100">
+                <a
+                  href={uploadedFiles.wizz_avihu ? uploadedFiles.wizz_avihu.url : "./docs/AVIHU_TVUYA_SITTON_WIZZ.pdf"}
+                  target="_blank"
+                  rel="noreferrer"
+                  download="AVIHU_TVUYA_SITTON_WIZZ.pdf"
+                  className="flex items-center justify-center gap-1.5 bg-[#f6f2ea] hover:bg-[#ede7db] text-[#162c21] font-bold py-2 px-2 rounded-xl border border-[#ded5c5] transition active:scale-95 text-[11px]"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#1f3f31]" />
+                  <span>כרטיס (אביהו 14A)</span>
+                </a>
+                <a
+                  href={uploadedFiles.wizz_gil ? uploadedFiles.wizz_gil.url : "./docs/GIL_SITTON_WIZZ.pdf"}
+                  target="_blank"
+                  rel="noreferrer"
+                  download="GIL_SITTON_WIZZ.pdf"
+                  className="flex items-center justify-center gap-1.5 bg-[#f6f2ea] hover:bg-[#ede7db] text-[#162c21] font-bold py-2 px-2 rounded-xl border border-[#ded5c5] transition active:scale-95 text-[11px]"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#1f3f31]" />
+                  <span>כרטיס (גיל 14B)</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -163,13 +227,36 @@ export default function MoreTab({
               </div>
             </div>
 
-            <div className="space-y-1 text-xs text-slate-700">
+            <div className="space-y-2 text-xs text-slate-700">
               <div className="flex justify-between border-b pb-1">
                 <span className="font-bold text-[#162c21] font-mono ltr">{FLIGHTS.inbound.seats}</span>
                 <span className="text-slate-500">מושבים שמורים:</span>
               </div>
               <div className="text-[11px] text-amber-900 bg-[#fff9eb] p-2.5 rounded-xl border border-[#f5e4bd]">
                 ⭐ <b>תזכורת לשקט נפשי ב-7.10:</b> {FLIGHTS.inbound.offlineChecklistDate}
+              </div>
+
+              {/* Inbound action buttons */}
+              <div className="grid grid-cols-2 gap-2 pt-1 border-t border-slate-100">
+                <a
+                  href={uploadedFiles.wizz_return ? uploadedFiles.wizz_return.url : "./docs/WIZZ_RETURN_FLIGHT_W64427.pdf"}
+                  target="_blank"
+                  rel="noreferrer"
+                  download="WIZZ_RETURN_FLIGHT_W64427.pdf"
+                  className="flex items-center justify-center gap-1.5 bg-[#f6f2ea] hover:bg-[#ede7db] text-[#162c21] font-bold py-2 px-2 rounded-xl border border-[#ded5c5] transition active:scale-95 text-[11px]"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#1f3f31]" />
+                  <span>אישור חזור (14E/14F)</span>
+                </a>
+                <a
+                  href="https://wizzair.com/he-il/booking-search?confirmationCode=CSZI3H&surname=SITTON"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-1.5 bg-[#1f3f31] hover:bg-[#162e24] text-white font-bold py-2 px-2 rounded-xl transition active:scale-95 text-[11px]"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 text-white" />
+                  <span>צ'ק-אין Wizz</span>
+                </a>
               </div>
             </div>
           </div>
@@ -280,6 +367,29 @@ export default function MoreTab({
                   <Navigation className="w-3.5 h-3.5" />
                   <span>נווט ישירות לחניית הווילה (Three Peaks Thermal Villas)</span>
                 </a>
+
+                {/* PDF Confirmation & Booking portal */}
+                <div className="col-span-2 grid grid-cols-2 gap-2 pt-1 border-t border-[#ded8ce]">
+                  <a
+                    href={uploadedFiles.villa_booking ? uploadedFiles.villa_booking.url : "./docs/THREE_PEAKS_VILLA_BOOKING_5158618016.pdf"}
+                    target="_blank"
+                    rel="noreferrer"
+                    download="THREE_PEAKS_VILLA_BOOKING_5158618016.pdf"
+                    className="flex items-center justify-center gap-1.5 bg-[#f6f2ea] hover:bg-[#ede7db] text-[#162c21] font-bold py-2 px-2 rounded-xl border border-[#ded5c5] transition active:scale-95 text-[11px]"
+                  >
+                    <Download className="w-3.5 h-3.5 text-[#1f3f31]" />
+                    <span>אישור Booking (PDF)</span>
+                  </a>
+                  <a
+                    href="https://secure.booking.com/myreservations.html"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-1.5 bg-[#1f3f31] hover:bg-[#162e24] text-white font-bold py-2 px-2 rounded-xl transition active:scale-95 text-[11px]"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 text-white" />
+                    <span>פורטל Booking.com</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -404,6 +514,30 @@ export default function MoreTab({
                 <Navigation className="w-3.5 h-3.5" />
                 <span>נווט להחזרת רכב בנמל התעופה סופיה (04:00 לפנות בוקר)</span>
               </a>
+
+              {/* PDF Car Documents row */}
+              <div className="col-span-2 grid grid-cols-2 gap-2 pt-1 border-t border-slate-100">
+                <a
+                  href={uploadedFiles.car_voucher ? uploadedFiles.car_voucher.url : "./docs/TOP_RENT_CAR_VOUCHER_722769120.pdf"}
+                  target="_blank"
+                  rel="noreferrer"
+                  download="TOP_RENT_CAR_VOUCHER_722769120.pdf"
+                  className="flex items-center justify-center gap-1.5 bg-[#f6f2ea] hover:bg-[#ede7db] text-[#162c21] font-bold py-2 px-2 rounded-xl border border-[#ded5c5] transition active:scale-95 text-[11px]"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#1f3f31]" />
+                  <span>שובר רכב Top Rent (PDF)</span>
+                </a>
+                <a
+                  href={uploadedFiles.rental_cover ? uploadedFiles.rental_cover.url : "./docs/RENTALCOVER_POLICY_SEHP-P4E8-INS.pdf"}
+                  target="_blank"
+                  rel="noreferrer"
+                  download="RENTALCOVER_POLICY_SEHP-P4E8-INS.pdf"
+                  className="flex items-center justify-center gap-1.5 bg-[#f6f2ea] hover:bg-[#ede7db] text-[#162c21] font-bold py-2 px-2 rounded-xl border border-[#ded5c5] transition active:scale-95 text-[11px]"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#1f3f31]" />
+                  <span>פוליסת RentalCover (PDF)</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -712,88 +846,189 @@ export default function MoreTab({
 
       {/* 7. DOCUMENTS & OFFLINE FILES SECTION */}
       {activeSection === "docs" && (
-        <div className="space-y-3">
-          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-3 text-xs text-blue-900 leading-relaxed">
-            📁 <b>קובצי נסיעה Offline:</b> רשימת מסמכי הנסיעה הנדרשים. ודא שכל הקבצים שמורים בזיכרון הטלפון לקריאה ללא צורך ברשת.
+        <div className="space-y-4 animate-fade-in">
+          {/* Header Info Banner */}
+          <div className="bg-[#f5f1e9] border border-[#dfd7c9] rounded-3xl p-4 text-xs text-[#3a3025] space-y-2 leading-relaxed">
+            <div className="flex items-center gap-2 font-bold text-sm text-[#162c21]">
+              <FileCheck className="w-4 h-4 text-emerald-700" />
+              <span>מרכז מסמכי נסיעה וקובצי PDF זמינים אופליין</span>
+            </div>
+            <p className="text-slate-600">
+              כל המסמכים החיוניים (כרטיסי עלייה למטוס, שוברי רכב, פוליסות ביטוח ואישורי מלון) מוכנים לצפייה והורדה ישירה לטלפון.
+              בנוסף ניתן להיכנס בלחיצה אחת לפורטלי הספקים או להעלות קובץ מקורי מהמכשיר לשמירה מקומית ב-Offline.
+            </p>
           </div>
 
-          <div className="space-y-2 text-xs">
-            {/* Wizz Boarding pass 1 */}
-            <div className="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex items-center justify-between">
-              <span className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md">
-                כרטיס קיים
-              </span>
-              <div className="text-right">
-                <span className="font-bold text-slate-900 block font-mono ltr">AVIHU TVUYA_SITTON.pdf</span>
-                <span className="text-[11px] text-slate-500">כרטיס עלייה למטוס Wizz Air - הלוך TLV</span>
-              </div>
-            </div>
+          {/* List of Documents */}
+          <div className="space-y-3">
+            {[
+              {
+                key: "wizz_avihu",
+                title: "כרטיס עלייה למטוס Wizz Air — אביהו",
+                subtitle: "טיסת הלוך W6 4428 | נתב״ג T1 ➔ סופיה | מושב 14A | מזוודה 26 ק״ג",
+                file: "./docs/AVIHU_TVUYA_SITTON_WIZZ.pdf",
+                code: "קוד Wizz: CSZI3H · מושב 14A",
+                badge: "הלוך מאושר ✅",
+                badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+                portalUrl: "https://wizzair.com/he-il/booking-search?confirmationCode=CSZI3H&surname=SITTON",
+                portalLabel: "פורטל Wizz Air"
+              },
+              {
+                key: "wizz_gil",
+                title: "כרטיס עלייה למטוס Wizz Air — גיל",
+                subtitle: "טיסת הלוך W6 4428 | נתב״ג T1 ➔ סופיה | מושב 14B | פריט אישי",
+                file: "./docs/GIL_SITTON_WIZZ.pdf",
+                code: "קוד Wizz: CSZI3H · מושב 14B",
+                badge: "הלוך מאושר ✅",
+                badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+                portalUrl: "https://wizzair.com/he-il/booking-search?confirmationCode=CSZI3H&surname=SITTON",
+                portalLabel: "פורטל Wizz Air"
+              },
+              {
+                key: "wizz_return",
+                title: "אישור ופרטי טיסת חזור — W6 4427",
+                subtitle: "סופיה ➔ נתב״ג | יום שישי 9.10 בשעה 05:45 | מושבים 14E ו-14F",
+                file: "./docs/WIZZ_RETURN_FLIGHT_W64427.pdf",
+                code: "קוד Wizz: CSZI3H · המראה 05:45",
+                badge: "צ'ק-אין ייפתח 48 שעות לפני",
+                badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
+                portalUrl: "https://wizzair.com/he-il/booking-search?confirmationCode=CSZI3H&surname=SITTON",
+                portalLabel: "ביצוע צ'ק-אין ב-Wizz"
+              },
+              {
+                key: "car_voucher",
+                title: "שובר השכרת רכב רשמי (Top Rent)",
+                subtitle: "רכב VW T-Roc קבריולה | איסוף בשאטל סופיה | רפרנס: 722769120",
+                file: "./docs/TOP_RENT_CAR_VOUCHER_722769120.pdf",
+                code: "הזמנה: 722769120 · איסוף 12:30",
+                badge: "חובה להציג בדלפק",
+                badgeColor: "bg-amber-100 text-amber-900 border-amber-300",
+                portalUrl: "https://toprentacar.bg/en",
+                portalLabel: "אתר Top Rent"
+              },
+              {
+                key: "rental_cover",
+                title: "פוליסת ביטוח רכב RentalCover",
+                subtitle: "ביטול השתתפות עצמית מלא עד €1,200+ (שמשות, צמיגים, גחון)",
+                file: "./docs/RENTALCOVER_POLICY_SEHP-P4E8-INS.pdf",
+                code: "פוליסה: SEHP-P4E8-INS",
+                badge: "כיסוי מאושר",
+                badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+                portalUrl: "https://www.rentalcover.com/en/claim",
+                portalLabel: "מוקד הגשת תביעה / פוליסה"
+              },
+              {
+                key: "villa_booking",
+                title: "אישור הזמנת וילה Three Peaks",
+                subtitle: "בריכה תרמית פרטית 38°C בבאניה | שולם ב-Booking: €474.48 | Late Stay 130€",
+                file: "./docs/THREE_PEAKS_VILLA_BOOKING_5158618016.pdf",
+                code: "Booking Ref: 5158618016",
+                badge: "שולם מראש במלואו",
+                badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+                portalUrl: "https://secure.booking.com/myreservations.html",
+                portalLabel: "ההזמנה ב-Booking.com"
+              },
+              {
+                key: "travel_insurance",
+                title: "ביטוח נסיעות וספורט אתגרי — אביהו וגיל",
+                subtitle: "כולל הרחבת ספורט אתגרי מלא, איתור וחילוץ הררי (טרקים ו-e-MTB)",
+                file: "./docs/TRAVEL_INSURANCE_POLICY.pdf",
+                code: "מוקד חירום: *9912 / +972-9-8920930",
+                badge: "כיסוי חובה בטרקים",
+                badgeColor: "bg-teal-100 text-teal-800 border-teal-300",
+                portalUrl: "https://www.passportcard.co.il/",
+                portalLabel: "פורטל PassportCard"
+              },
+              {
+                key: "moriah_insurance",
+                title: "ביטוח נסיעות לחו״ל — מוריה",
+                subtitle: "מתחת לגיל 24 (חיתום מותאם לצעירים + הרחבת ספורט אתגרי וחילוץ הררי)",
+                file: "./docs/MORIAH_TRAVEL_INSURANCE_PENDING.pdf",
+                code: "סטטוס: טרם הוסדר · דרוש טיפול לפני הטיסה",
+                badge: "⚠️ טרם הוסדר · דחוף",
+                badgeColor: "bg-rose-100 text-rose-800 border-rose-300",
+                portalUrl: "https://www.passportcard.co.il/",
+                portalLabel: "הסדרה ישירה אונליין"
+              }
+            ].map((doc) => {
+              const customFile = uploadedFiles[doc.key];
+              const fileHref = customFile ? customFile.url : doc.file;
+              const isUploaded = !!customFile;
 
-            {/* Wizz Boarding pass 2 */}
-            <div className="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex items-center justify-between">
-              <span className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md">
-                כרטיס קיים
-              </span>
-              <div className="text-right">
-                <span className="font-bold text-slate-900 block font-mono ltr">GIL_SITTON.pdf</span>
-                <span className="text-[11px] text-slate-500">כרטיס עלייה למטוס Wizz Air - הלוך TLV</span>
-              </div>
-            </div>
+              return (
+                <div 
+                  key={doc.key} 
+                  className="bg-white rounded-3xl border border-[#ded8ce] p-4 shadow-2xs space-y-3 transition hover:border-[#b85c39]/50"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border shrink-0 ${isUploaded ? "bg-emerald-100 text-emerald-800 border-emerald-300" : doc.badgeColor}`}>
+                      {isUploaded ? "קובץ מקורי שלך נשמר במכשיר ✅" : doc.badge}
+                    </span>
+                    <div className="text-right flex-1">
+                      <h4 className="font-editorial font-bold text-slate-900 text-sm">{doc.title}</h4>
+                      <p className="text-[11px] text-slate-500 leading-relaxed mt-0.5">{doc.subtitle}</p>
+                    </div>
+                  </div>
 
-            {/* Official Car Voucher */}
-            <div className="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex items-center justify-between">
-              <span className="text-[10px] font-bold bg-blue-100 text-blue-800 px-2 py-0.5 rounded-md">
-                חובה בדלפק
-              </span>
-              <div className="text-right">
-                <span className="font-bold text-slate-900 block font-mono ltr">Official Booking Car Voucher (Top Rent)</span>
-                <span className="text-[11px] text-slate-500">שובר ההשכרה הרשמי עם הוראות השאטל (ref: 722769120)</span>
-              </div>
-            </div>
+                  <div className="bg-[#faf8f5] px-3 py-1.5 rounded-xl border border-[#ede7de] flex items-center justify-between text-[11px] font-mono text-slate-600">
+                    <span className="ltr font-bold text-slate-800">{doc.filename}</span>
+                    <span>{doc.code}</span>
+                  </div>
 
-            {/* Car rental print */}
-            <div className="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex items-center justify-between">
-              <span className="text-[10px] font-bold bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md">
-                תקציר בלבד
-              </span>
-              <div className="text-right">
-                <span className="font-bold text-slate-900 block font-mono ltr">Booking_car_rental_print.pdf</span>
-                <span className="text-[11px] text-slate-500">תקציר הזמנה (אינו תחליף לשובר הרשמי!)</span>
-              </div>
-            </div>
+                  {/* Action Buttons Row */}
+                  <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
+                    {/* View / Download PDF */}
+                    <a
+                      href={fileHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      download={isUploaded ? customFile.name : doc.filename}
+                      className="group flex-1 min-w-[120px] flex items-center justify-between bg-[#1f3f31] hover:bg-[#152a21] text-white font-bold py-2 px-3 rounded-xl shadow-2xs transition active:scale-95"
+                    >
+                      <span className="text-[11px]">צפה / הורד PDF</span>
+                      <div className="w-5 h-5 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <Download className="w-3 h-3 text-white" />
+                      </div>
+                    </a>
 
-            {/* Travel Insurance Alert - Moriah */}
-            <div className="bg-[#fff8f5] border border-rose-300 rounded-2xl p-3.5 shadow-xs flex items-center justify-between">
-              <span className="text-[10px] font-bold bg-rose-100 text-rose-800 px-2.5 py-1 rounded-md">
-                ⚠️ טרם הוסדר
-              </span>
-              <div className="text-right">
-                <span className="font-bold text-[#8a2a16] block">ביטוח נסיעות לחו״ל — מוריה</span>
-                <span className="text-[11px] text-slate-600">מתחת לגיל 24 (דרוש כיסוי מותאם לגיל צעיר + ספורט אתגרי מלא וחילוץ)</span>
-              </div>
-            </div>
+                    {/* Portal link */}
+                    {doc.portalUrl && (
+                      <a
+                        href={doc.portalUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-1.5 bg-[#f6f2ea] hover:bg-[#ede7db] text-[#3a3025] font-medium py-2 px-3 rounded-xl border border-[#ded5c5] transition active:scale-95 text-[11px]"
+                      >
+                        <ExternalLink className="w-3 h-3 text-slate-500" />
+                        <span>{doc.portalLabel}</span>
+                      </a>
+                    )}
 
-            {/* General Travel Insurance */}
-            <div className="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex items-center justify-between">
-              <span className="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-md">
-                חובה בכל נסיעה
-              </span>
-              <div className="text-right">
-                <span className="font-bold text-slate-900 block font-mono ltr">Travel_Insurance_Policies.pdf</span>
-                <span className="text-[11px] text-slate-500">פוליסות ביטוח נסיעות אישיות (כולל הרחבת ספורט אתגרי וחילוץ לטרקים)</span>
-              </div>
-            </div>
+                    {/* Local upload file trigger */}
+                    <label className="flex items-center gap-1 bg-white hover:bg-slate-50 text-slate-600 font-medium py-2 px-2.5 rounded-xl border border-dashed border-slate-300 transition active:scale-95 text-[11px] cursor-pointer">
+                      <Paperclip className="w-3 h-3 text-slate-400" />
+                      <span>{isUploaded ? "החלף קובץ" : "העלה קובץ אישי"}</span>
+                      <input
+                        type="file"
+                        accept=".pdf,image/*"
+                        className="hidden"
+                        onChange={(e) => handleFileUpload(doc.key, e)}
+                      />
+                    </label>
 
-            {/* RentalCover Policy */}
-            <div className="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex items-center justify-between">
-              <span className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md font-mono ltr">
-                SEHP-P4E8-INS
-              </span>
-              <div className="text-right">
-                <span className="font-bold text-slate-900 block font-mono ltr">RentalCover Policy & Confirmation</span>
-                <span className="text-[11px] text-slate-500">אישור כיסוי מלא להחזר ביטוחי (לא כולל נסיעות שטח)</span>
-              </div>
-            </div>
+                    {isUploaded && (
+                      <button
+                        onClick={() => handleRemoveUploadedFile(doc.key)}
+                        className="text-rose-600 hover:text-rose-800 p-1.5 text-[10px] font-bold"
+                        title="הסר קובץ שהועלה"
+                      >
+                        מחק
+                      </button>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
