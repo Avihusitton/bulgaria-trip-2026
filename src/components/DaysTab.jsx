@@ -26,31 +26,31 @@ export default function DaysTab({
   // Day specific image backgrounds and evocative vibes
   const dayVibes = {
     1: {
-      image: "/images/thermal-villa.jpg",
+      image: "./images/thermal-villa.jpg",
       tag: "הגעה ומעיינות תרמיים",
       sentence: "נחיתה בסופיה, איסוף הרכב, התמקמות בווילה בבאניה והתארגנות לטיול.",
       accentBg: "bg-[#204234]"
     },
     2: {
-      image: "/images/five-lakes.jpg",
+      image: "./images/five-lakes.jpg",
       tag: "אגמים אלפיניים וספא",
       sentence: "הליכה שלווה בין חמשת אגמי בנדריצה הצלולים והשתקפויות שלכת זהובה.",
       accentBg: "bg-[#1d3d4d]"
     },
     3: {
-      image: "/images/vihren-peak.jpg",
+      image: "./images/vihren-peak.jpg",
       tag: "רכס שיש אלפיני דרמטי",
       sentence: "העפלה דרך עמק הקאזאנה אל פסגת ויחרן (2,914 מ') — הגג השישי בגובהו באירופה.",
       accentBg: "bg-[#2c3338]"
     },
     4: {
-      image: "/images/ebike-bansko.jpg",
+      image: "./images/ebike-bansko.jpg",
       tag: "שבילי יער, אופניים וקפה",
       sentence: "רכיבת e-MTB זורמת ביערות עמק פירין, קפה מעולה בבנסקו וטבילה לילית בווילה.",
       accentBg: "bg-[#33462f]"
     },
     5: {
-      image: "/images/hero-pirin.jpg",
+      image: "./images/hero-pirin.jpg",
       tag: "החזרת רכב וטיסת בוקר",
       sentence: "יציאה מוקדמת מסופיה, החזרת הרכב ב-04:00 והמראה ב-05:45 הביתה.",
       accentBg: "bg-[#1f2924]"

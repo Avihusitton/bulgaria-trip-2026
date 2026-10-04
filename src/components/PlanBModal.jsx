@@ -70,7 +70,7 @@ export default function PlanBModal({ isOpen, onClose }) {
         {/* Visual Header */}
         <div className="relative min-h-[120px] flex flex-col justify-end p-4 text-white overflow-hidden shrink-0">
           <img
-            src="/images/plan-b-melnik.jpg"
+            src="./images/plan-b-melnik.jpg"
             alt="Plan B Autumn Retreat"
             className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.65]"
           />

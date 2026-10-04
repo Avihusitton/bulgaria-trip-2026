@@ -15,10 +15,10 @@ export default function RoutesTab({
   onOpenPlanB
 }) {
   const trailImages = {
-    "five-lakes": "/images/five-lakes.jpg",
-    "vihren-peak": "/images/vihren-peak.jpg",
-    "ebike-valley": "/images/ebike-bansko.jpg",
-    "plan-b-melnik": "/images/plan-b-melnik.jpg"
+    "five-lakes": "./images/five-lakes.jpg",
+    "vihren-peak": "./images/vihren-peak.jpg",
+    "ebike-valley": "./images/ebike-bansko.jpg",
+    "plan-b-melnik": "./images/plan-b-melnik.jpg"
   };
 
   return (
@@ -56,7 +56,7 @@ export default function RoutesTab({
           const isFiveLakes = trail.id === "five-lakes";
           const isVihrenPeak = trail.id === "vihren-peak";
           const isEbike = trail.id === "ebike-valley";
-          const imgUrl = trailImages[trail.id] || "/images/hero-pirin.jpg";
+          const imgUrl = trailImages[trail.id] || "./images/hero-pirin.jpg";
 
           return (
             <div

@@ -183,7 +183,7 @@ export default function MoreTab({
             {/* Visual Header */}
             <div className="relative min-h-[140px] flex flex-col justify-end p-4 text-white overflow-hidden">
               <img
-                src="/images/thermal-villa.jpg"
+                src="./images/thermal-villa.jpg"
                 alt="Three Peaks Thermal Villas"
                 className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.70]"
               />
@@ -569,7 +569,7 @@ export default function MoreTab({
             {/* Visual Header */}
             <div className="relative min-h-[140px] flex flex-col justify-end p-4 text-white overflow-hidden">
               <img
-                src="/images/pulse-therme.jpg"
+                src="./images/pulse-therme.jpg"
                 alt="Pulse Therme Banya"
                 className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.70]"
               />

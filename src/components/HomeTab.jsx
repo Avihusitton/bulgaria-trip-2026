@@ -41,7 +41,7 @@ export default function HomeTab({
         <div className="relative rounded-[calc(1.5rem-0.25rem)] sm:rounded-[calc(1.75rem-0.375rem)] overflow-hidden min-h-[230px] sm:min-h-[300px] flex flex-col justify-end p-4 sm:p-6 text-white shadow-xl">
           {/* Atmospheric Mountain Photography */}
           <img 
-            src="/images/hero-pirin.jpg" 
+            src="./images/hero-pirin.jpg" 
             alt="Pirin National Park, Bulgaria" 
             className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.70] contrast-[1.10] transition duration-700 hover:scale-102"
           />
