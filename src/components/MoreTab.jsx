@@ -762,6 +762,28 @@ export default function MoreTab({
               </div>
             </div>
 
+            {/* Travel Insurance Alert - Moriah */}
+            <div className="bg-[#fff8f5] border border-rose-300 rounded-2xl p-3.5 shadow-xs flex items-center justify-between">
+              <span className="text-[10px] font-bold bg-rose-100 text-rose-800 px-2.5 py-1 rounded-md">
+                ⚠️ טרם הוסדר
+              </span>
+              <div className="text-right">
+                <span className="font-bold text-[#8a2a16] block">ביטוח נסיעות לחו״ל — מוריה</span>
+                <span className="text-[11px] text-slate-600">מתחת לגיל 24 (דרוש כיסוי מותאם לגיל צעיר + ספורט אתגרי מלא וחילוץ)</span>
+              </div>
+            </div>
+
+            {/* General Travel Insurance */}
+            <div className="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex items-center justify-between">
+              <span className="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-md">
+                חובה בכל נסיעה
+              </span>
+              <div className="text-right">
+                <span className="font-bold text-slate-900 block font-mono ltr">Travel_Insurance_Policies.pdf</span>
+                <span className="text-[11px] text-slate-500">פוליסות ביטוח נסיעות אישיות (כולל הרחבת ספורט אתגרי וחילוץ לטרקים)</span>
+              </div>
+            </div>
+
             {/* RentalCover Policy */}
             <div className="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs flex items-center justify-between">
               <span className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md font-mono ltr">

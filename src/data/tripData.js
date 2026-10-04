@@ -10,7 +10,8 @@ export const TRIP_INFO = {
   baseLocation: "Banya / Bansko / Pirin",
   participants: [
     { name: "אביהו", height: "166 ס״מ", bag: "פריט אישי (40×30×20) + מזוודה 26 ק״ג", seats: "14A (הלוך) / 14E (חזור)" },
-    { name: "גיל", height: "158 ס״מ", bag: "פריט אישי (40×30×20)", seats: "14B (הלוך) / 14F (חזור)" }
+    { name: "גיל", height: "158 ס״מ", bag: "פריט אישי (40×30×20)", seats: "14B (הלוך) / 14F (חזור)" },
+    { name: "מוריה", note: "מתחת לגיל 24 (ביטוח נסיעות טרם הוסדר - נדרש כיסוי צעירים וספורט אתגרי)" }
   ]
 };
 
@@ -29,6 +30,13 @@ export const EMERGENCY_CONTACTS = [
     phone: "112",
     displayPhone: "112",
     role: "משטרה / אמבולנס / חילוץ כללי",
+    priority: "HIGH"
+  },
+  {
+    name: "מוקד חירום רפואי וביטוח נסיעות (PassportCard)",
+    phone: "+97298920930",
+    displayPhone: "+972 9 892 0930 (*9912)",
+    role: "סיוע רפואי דחוף והפעלת כיסוי ביטוחי בחו״ל",
     priority: "HIGH"
   },
   {
@@ -642,6 +650,8 @@ export const KOSHER_GUIDE = {
 export const INITIAL_VERIFIED_PRODUCTS = [];
 
 export const INITIAL_PACKING_LIST = [
+  { id: "pack-insurance-moriah", category: "מסמכים וכספים", text: "⚠️ להסדיר ביטוח נסיעות לחו״ל למוריה (מתחת לגיל 24 - לוודא כיסוי צעירים + הרחבת ספורט אתגרי וחילוץ הררי)", checked: false },
+  { id: "pack-insurance-general", category: "מסמכים וכספים", text: "פוליסות ביטוח נסיעות לחו״ל שמורות בטלפון ב-Offline (כולל ספורט אתגרי וחילוץ)", checked: false },
   { id: "pack-1", category: "מסמכים וכספים", text: "דרכונים (בתוקף לפחות 6 חודשים)", checked: false },
   { id: "pack-2", category: "מסמכים וכספים", text: "רישיונות נהיגה בתוקף (אביהו + גיל)", checked: false },
   { id: "pack-3", category: "מסמכים וכספים", text: "כרטיס אשראי בינלאומי על שם הנהג הראשי עם מסגרת מספקת לפיקדון (כ-€1,200 VERIFY)", checked: false },

@@ -2,7 +2,7 @@ import React from "react";
 import { 
   Navigation, Phone, MessageSquare, AlertTriangle, Compass, CheckSquare, 
   MapPin, Car, Home, Bike, Waves, ShoppingCart, ChevronLeft, CreditCard, 
-  Sparkles, ExternalLink, Calendar, Heart
+  Sparkles, ExternalLink, Calendar, Heart, ShieldAlert
 } from "lucide-react";
 import { 
   DAYS_PLAN, FLIGHTS, ACCOMMODATION, CAR_RENTAL, BIKES_INFO, 
@@ -95,49 +95,109 @@ export default function HomeTab({
         </div>
       </div>
 
-      {/* 2. BOUTIQUE COUPLES CONCIERGE — MASSAGE & SPA RESERVATION */}
-      <div className="p-1 rounded-[1.75rem] bg-[#f2e5dc]/80 ring-1 ring-[#dec4b4]/70 shadow-xs">
-        <div className="rounded-[calc(1.75rem-0.25rem)] bg-[#fffaf6] p-5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="text-[10px] font-bold uppercase tracking-wider bg-[#b85c39]/12 text-[#9e4624] px-2.5 py-1 rounded-full border border-[#b85c39]/20 font-mono">
-              פינוק שמשריינים מראש
-            </span>
-            <div className="flex items-center gap-2 font-bold text-base text-[#261f19]">
-              <span>עיסוי זוגי וספא Pulse Therme</span>
-              <div className="w-7 h-7 rounded-full bg-[#faeee8] text-[#b85c39] flex items-center justify-center">
-                <Waves className="w-3.5 h-3.5" />
+      {/* 2. IMPORTANT PRE-TRIP ESSENTIALS — דברים חשובים להסדרה */}
+      <div className="space-y-3">
+        <div className="flex items-center justify-between px-1">
+          <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full border border-amber-200 font-mono">
+            לפני ההמראה · דברים חשובים
+          </span>
+          <h3 className="font-editorial font-bold text-sm text-[#261f19]">משימות פתוחות להסדרה</h3>
+        </div>
+
+        {/* 2A. URGENT ALERT: MORIAH TRAVEL INSURANCE (UNDER 24) */}
+        <div className="p-1 rounded-[1.75rem] bg-[#fbf0ea] ring-1 ring-[#eecbc0] shadow-xs">
+          <div className="rounded-[calc(1.75rem-0.25rem)] bg-white p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <span className="text-[10px] font-bold bg-[#8a2a16] text-white px-2.5 py-1 rounded-full shrink-0">
+                ⏳ טרם הוסדר · דחוף
+              </span>
+              <div className="flex items-center gap-2 font-bold text-base text-[#261f19]">
+                <span>ביטוח נסיעות לחו״ל — מוריה</span>
+                <div className="w-7 h-7 rounded-full bg-[#fcedea] text-[#cf482c] flex items-center justify-center shrink-0">
+                  <ShieldAlert className="w-4 h-4" />
+                </div>
               </div>
             </div>
+
+            <div className="bg-[#fff8f5] border border-[#f7dcd3] rounded-2xl p-3 text-xs text-[#8a2a16] space-y-1.5 leading-relaxed">
+              <div className="font-bold flex items-center gap-1.5">
+                <span>⚠️ שימו לב: מוריה מתחת לגיל 24</span>
+              </div>
+              <p className="text-[#642b1d]">
+                כרגע עוד לא הסדרנו את הביטוח למוריה כי היא מתחת לגיל 24 (מדרג גיל צעיר הדורש חיתום מותאם). 
+                חובה לוודא שהפוליסה כוללת הרחבה מלאה ל<b>ספורט אתגרי</b> ו<b>איתור וחילוץ הררי</b> לקראת הטרקים ורכיבת ה-e-MTB בפירין!
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2 pt-0.5">
+              <a
+                href="https://www.passportcard.co.il/"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between bg-[#1f3f31] hover:bg-[#162e24] text-white font-bold py-2.5 px-3.5 rounded-full text-xs shadow-xs transition-all duration-200 active:scale-[0.98]"
+              >
+                <span>הסדרת פוליסה אונליין</span>
+                <div className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <ExternalLink className="w-3 h-3 text-white" />
+                </div>
+              </a>
+              <a
+                href="tel:*9912"
+                className="group flex items-center justify-between bg-white hover:bg-[#f7f2ea] text-[#332b24] font-bold py-2.5 px-3.5 rounded-full text-xs border border-[#ddd3c4] transition-all duration-200 active:scale-[0.98]"
+              >
+                <span>מוקד PassportCard (*9912)</span>
+                <div className="w-6 h-6 rounded-full bg-[#f2ece2] flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <Phone className="w-3 h-3 text-[#706456]" />
+                </div>
+              </a>
+            </div>
           </div>
+        </div>
 
-          <p className="text-xs text-[#52463b] leading-relaxed">
-            נשאר להזמין תור לעיסוי זוגי כדי להבטיח מטפלים זמינים בשעה שנוחה לנו. מומלץ לחייג ישירות לספא ולשריין תור לערב ה-6.10, ישר אחרי הטרק הנפלא של 5 האגמים!
-          </p>
-
-          <div className="grid grid-cols-2 gap-2.5 pt-1">
-            {/* Button-in-button primary call */}
-            <a
-              href="tel:+359898989898"
-              className="group flex items-center justify-between bg-[#1f3f31] hover:bg-[#162e24] text-white font-bold py-2.5 px-3.5 rounded-full text-xs shadow-xs transition-all duration-200 active:scale-[0.98]"
-            >
-              <span>חייג להזמנת עיסוי</span>
-              <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
-                <Phone className="w-3.5 h-3.5 text-white" />
+        {/* 2B. BOUTIQUE COUPLES CONCIERGE — MASSAGE & SPA RESERVATION */}
+        <div className="p-1 rounded-[1.75rem] bg-[#f2e5dc]/80 ring-1 ring-[#dec4b4]/70 shadow-xs">
+          <div className="rounded-[calc(1.75rem-0.25rem)] bg-[#fffaf6] p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-bold uppercase tracking-wider bg-[#b85c39]/12 text-[#9e4624] px-2.5 py-1 rounded-full border border-[#b85c39]/20 font-mono">
+                פינוק שמשריינים מראש
+              </span>
+              <div className="flex items-center gap-2 font-bold text-base text-[#261f19]">
+                <span>עיסוי זוגי וספא Pulse Therme</span>
+                <div className="w-7 h-7 rounded-full bg-[#faeee8] text-[#b85c39] flex items-center justify-center">
+                  <Waves className="w-3.5 h-3.5" />
+                </div>
               </div>
-            </a>
+            </div>
 
-            {/* Button-in-button secondary site */}
-            <a
-              href="https://pulsetherme.bg/"
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-center justify-between bg-white hover:bg-[#f7f2ea] text-[#332b24] font-bold py-2.5 px-3.5 rounded-full text-xs border border-[#ddd3c4] transition-all duration-200 active:scale-[0.98]"
-            >
-              <span>אתר הספא Pulse</span>
-              <div className="w-7 h-7 rounded-full bg-[#f2ece2] flex items-center justify-center group-hover:scale-105 transition-transform">
-                <ExternalLink className="w-3 h-3 text-[#706456]" />
-              </div>
-            </a>
+            <p className="text-xs text-[#52463b] leading-relaxed">
+              נשאר להזמין תור לעיסוי זוגי כדי להבטיח מטפלים זמינים בשעה שנוחה לנו. מומלץ לחייג ישירות לספא ולשריין תור לערב ה-6.10, ישר אחרי הטרק הנפלא של 5 האגמים!
+            </p>
+
+            <div className="grid grid-cols-2 gap-2.5 pt-0.5">
+              {/* Button-in-button primary call */}
+              <a
+                href="tel:+359898989898"
+                className="group flex items-center justify-between bg-[#1f3f31] hover:bg-[#162e24] text-white font-bold py-2.5 px-3.5 rounded-full text-xs shadow-xs transition-all duration-200 active:scale-[0.98]"
+              >
+                <span>חייג להזמנת עיסוי</span>
+                <div className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <Phone className="w-3 h-3 text-white" />
+                </div>
+              </a>
+
+              {/* Button-in-button secondary site */}
+              <a
+                href="https://pulsetherme.bg/"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between bg-white hover:bg-[#f7f2ea] text-[#332b24] font-bold py-2.5 px-3.5 rounded-full text-xs border border-[#ddd3c4] transition-all duration-200 active:scale-[0.98]"
+              >
+                <span>אתר הספא Pulse</span>
+                <div className="w-6 h-6 rounded-full bg-[#f2ece2] flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <ExternalLink className="w-3 h-3 text-[#706456]" />
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
