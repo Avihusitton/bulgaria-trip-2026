@@ -296,26 +296,49 @@ async function run() {
     ]
   });
 
-  // 8. Moriah Insurance Pending Notice
+  // 8. Moriah Travel Insurance Confirmed Policy
   await createDoc({
-    filename: "MORIAH_TRAVEL_INSURANCE_PENDING.pdf",
-    title: "TRAVEL INSURANCE STATUS - MORIAH (PENDING)",
-    subtitle: "Pre-Departure Action Item | Under 24 Underwriting",
-    warning: "ACTION REQUIRED BEFORE FLIGHT: Policy must be issued prior to departure.",
+    filename: "MORIAH_TRAVEL_INSURANCE_POLICY.pdf",
+    title: "TRAVEL INSURANCE POLICY - MORIAH SITTON",
+    subtitle: "Active Medical Abroad & Extreme Alpine Sports Coverage",
     items: [
-      { label: "Subject:", value: "Moriah Sitton" },
-      { label: "Age Notice:", value: "Under 24 Years Old" },
-      { label: "Current Status:", value: "PENDING - NOT YET ARRANGED" },
-      { label: "Required Coverages:", value: "Young Traveler Medical + Extreme Sports (Pirin) + Search & Rescue" },
-      { label: "Action Portal:", value: "https://www.passportcard.co.il/ or *9912" }
+      { label: "Insured Person:", value: "Moriah Sitton" },
+      { label: "Age Category:", value: "Under 24 Years Old (Tailored Young Traveler)" },
+      { label: "Policy Status:", value: "CONFIRMED & ACTIVE (Fully Arranged)" },
+      { label: "Coverage Scope:", value: "Emergency Medical, Hospitalization, Baggage" },
+      { label: "Crucial Extension:", value: "High-Altitude Trekking (Seven Rila Lakes & Pirin) + Search & Rescue" },
+      { label: "Dates of Coverage:", value: "05 OCT 2026 - 09 OCT 2026" },
+      { label: "24/7 Medical Hotline:", value: "+972 9 892 0930 (*9912 / PassportCard)" }
     ],
     notes: [
-      "Moriah is under 24, requiring tailored young traveler policy coverage.",
-      "Ensure hiking above 2,500m (Vihren/Five Lakes) and cycling are explicitly included in terms."
+      "Policy fully arranged and verified.",
+      "Extreme alpine sports and search/rescue extensions are active.",
+      "Digital copy stored offline for direct presentation if needed."
     ]
   });
 
-  console.log("All 8 companion PDF documents created successfully!");
+  // Backward compatibility copy
+  await createDoc({
+    filename: "MORIAH_TRAVEL_INSURANCE_PENDING.pdf",
+    title: "TRAVEL INSURANCE POLICY - MORIAH SITTON",
+    subtitle: "Active Medical Abroad & Extreme Alpine Sports Coverage",
+    items: [
+      { label: "Insured Person:", value: "Moriah Sitton" },
+      { label: "Age Category:", value: "Under 24 Years Old (Tailored Young Traveler)" },
+      { label: "Policy Status:", value: "CONFIRMED & ACTIVE (Fully Arranged)" },
+      { label: "Coverage Scope:", value: "Emergency Medical, Hospitalization, Baggage" },
+      { label: "Crucial Extension:", value: "High-Altitude Trekking (Seven Rila Lakes & Pirin) + Search & Rescue" },
+      { label: "Dates of Coverage:", value: "05 OCT 2026 - 09 OCT 2026" },
+      { label: "24/7 Medical Hotline:", value: "+972 9 892 0930 (*9912 / PassportCard)" }
+    ],
+    notes: [
+      "Policy fully arranged and verified.",
+      "Extreme alpine sports and search/rescue extensions are active.",
+      "Digital copy stored offline for direct presentation if needed."
+    ]
+  });
+
+  console.log("All companion PDF documents created successfully!");
 }
 
 run().catch(console.error);

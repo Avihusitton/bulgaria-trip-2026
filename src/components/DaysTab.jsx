@@ -32,9 +32,9 @@ export default function DaysTab({
       accentBg: "bg-[#204234]"
     },
     2: {
-      image: "./images/five-lakes.jpg",
-      tag: "אגמים אלפיניים וספא",
-      sentence: "הליכה שלווה בין חמשת אגמי בנדריצה הצלולים והשתקפויות שלכת זהובה.",
+      image: "./images/rila-lakes.jpg",
+      tag: "שבעת אגמי רילה ורכבל כיסאות",
+      sentence: "טרק עוצר נשימה בין 7 אגמי הקרחונים ברילה, רכבל כיסאות פתוח וטבילה תרמית בווילה.",
       accentBg: "bg-[#1d3d4d]"
     },
     3: {
@@ -229,28 +229,30 @@ export default function DaysTab({
                     {day.dayNumber === 2 && (
                       <div className="space-y-2">
                         <a
-                          href="https://www.google.com/maps/dir/?api=1&destination=41.7558,23.4158"
+                          href="https://www.google.com/maps/dir/?api=1&destination=42.2398,23.3275"
                           target="_blank"
                           rel="noreferrer"
                           className="w-full flex items-center justify-center gap-1.5 bg-[#204234] hover:bg-[#183328] text-white font-medium py-2.5 px-3 rounded-xl text-xs transition active:scale-98"
                         >
                           <Navigation className="w-3.5 h-3.5" />
-                          <span>נווט לבקתת ויחרן (Vihren Hut)</span>
+                          <span>נווט לרכבל 7 אגמי רילה (Pionerska Hut)</span>
                         </a>
                         <div className="grid grid-cols-2 gap-2">
                           <button
-                            onClick={() => onOpenTrail("five-lakes")}
+                            onClick={() => onOpenTrail("rila-lakes")}
                             className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f4efe8] text-[#204234] font-medium py-2 px-3 rounded-xl text-xs border border-[#d6cec0] transition active:scale-98"
                           >
                             <MapPin className="w-3.5 h-3.5 text-blue-600" />
-                            <span>פתח מפת מסלול</span>
+                            <span>פתח מפת 7 האגמים</span>
                           </button>
                           <a
-                            href="tel:+359898989898"
+                            href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("היי, אנחנו מטיילים ברילה, נגיע לתיאום/פיטינג אופניים הערב או מחר ברביעי!")}`}
+                            target="_blank"
+                            rel="noreferrer"
                             className="flex items-center justify-center gap-1.5 bg-[#f5eee4] hover:bg-[#ece2d4] text-[#9e4624] font-medium py-2 px-3 rounded-xl text-xs border border-[#e5d5c0] transition active:scale-98"
                           >
-                            <Phone className="w-3.5 h-3.5" />
-                            <span>חייג לספא להזמנת עיסוי</span>
+                            <MessageSquare className="w-3.5 h-3.5 text-[#9e4624]" />
+                            <span>תיאום אופניים להערב/מחר</span>
                           </a>
                         </div>
                       </div>

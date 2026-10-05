@@ -11,7 +11,7 @@ export const TRIP_INFO = {
   participants: [
     { name: "אביהו", height: "166 ס״מ", bag: "פריט אישי (40×30×20) + מזוודה 26 ק״ג", seats: "14A (הלוך) / 14E (חזור)" },
     { name: "גיל", height: "158 ס״מ", bag: "פריט אישי (40×30×20)", seats: "14B (הלוך) / 14F (חזור)" },
-    { name: "מוריה", note: "מתחת לגיל 24 (ביטוח נסיעות טרם הוסדר - נדרש כיסוי צעירים וספורט אתגרי)" }
+    { name: "מוריה", note: "גיל מתחת ל-24 · ביטוח נסיעות לחו״ל הוסדר במלואו! ✅" }
   ]
 };
 
@@ -281,8 +281,8 @@ export const BIKES_INFO = {
     price: "76€ לזוג אופניים ליום שלם",
     operatingHours: "התחלה אחרי ~08:30, החזרה לפני רדת החשיכה",
     terms: "הבעלים הציע pickup/dropoff מ-Banya ללא עלות; המסלולים מתחילים מבנסקו.",
-    fitVerification: "Fitting ב-5.10 מאושר. גיל 158 ס״מ. לבדוק מושב, מרחק בלמים ועצירה בטוחה.",
-    reservationWarning: "דגש קריטי: עדיין אין משפט מפורש שמאשר reservation full-day ל-8.10! אחרי fitting מוצלח ב-5.10 יש לקבל אישור כתוב סופי ל-8.10!",
+    fitVerification: "Fitting לגיל (158 ס״מ) — לא בוצע ב-5.10 ונדחה לשלישי בערב (6.10) או לרביעי (7.10). לבדוק גובה מושב, מרחק בלמים ועצירה בטוחה.",
+    reservationWarning: "דגש לתיאום: אחרי ה-Fitting בשלישי/רביעי לקבל אישור סופי לסגירת זוג האופניים ליום חמישי 8.10!",
     routeRule: "אין לקבע מסלול e-MTB קבוע לפני שהבעלים ממליץ בפועל על route שמתאים ל-30–50km, easy/moderate, non-technical."
   },
   backup: {
@@ -363,7 +363,7 @@ export const DAYS_PLAN = [
       { time: "13:30", action: "רוד-טריפ יפהפה דרומה לעמק פירין (כשעתיים נסיעה נופית בכבישים A3 ו-19)" },
       { time: "15:30", action: "עצירת קניות כיפית ב-BILLA בנסקו (מצרכים, פירות ונשנושים לווילה)" },
       { time: "16:45", action: "כניסה לווילה Three Peaks Thermal Villas בבאניה — טבילה ראשונה במים החמים (38°C)!" },
-      { time: "17:45", action: "מפגש קצר ב-e-Bike Bansko לוודא שהאופניים מתאימים לגיל בול לקראת יום 4" },
+      { time: "17:45", action: "התאמת אופניים ב-e-Bike Bansko: לא הספקנו היום, נדחה למחר (שלישי בערב) או לרביעי" },
       { time: "19:30", action: "ערב שקט ואינטימי בווילה: ארוחה טעימה, מים תרמיים חמים והכנות ליום המחרת" }
     ],
     checklist: [
@@ -371,7 +371,7 @@ export const DAYS_PLAN = [
       "שני הנהגים רשומים בחוזה Top Rent",
       "אימות מדבקת כבישים (Vignette) ומדיניות דלק",
       "קניות מצרכים ראשונות ב-BILLA / T MARKET עם סריקת ברקודים ב-ZeKasher",
-      "בדיקת התאמת אופניים קלה בבנסקו (Bike Fitting) לגיל",
+      "התאמת אופניים ב-e-Bike Bansko (נדחה למחר בערב או לרביעי)",
       "טבילה חלומית ראשונה בבריכה התרמית הפרטית של הווילה (38°C)"
     ],
     planB: "אם יש עייפות מהטיסה או עיכוב קל בכביש, נוסעים ישר לווילה בבאניה, נהנים מהבריכה החמה ומשלימים את הקניות והאופניים בנחת."
@@ -380,38 +380,40 @@ export const DAYS_PLAN = [
     dayNumber: 2,
     date: "2026-10-06",
     dayOfWeek: "שלישי",
-    title: "חמשת אגמי הטורקיז של פירין וערב ספא מפנק",
+    title: "שבעת אגמי רילה המרהיבים (Seven Rila Lakes) והרכבל האלפיני",
     status: "PLANNED",
-    subtitle: "מסלול מעגלי מרהיב בין אגמי בנדריצה הצלולים + פינוק בספא Pulse Therme",
-    keyAlert: "🏔️ טיפ שטח מהלב: מסלול האגמים הוא אחד היפים בבולגריה! קחו נעליים טובות, צעדים מדודים באזורים הסלעיים, ומצלמה מוכנה להשתקפויות המים.",
+    subtitle: "טרק אלפיני עוצר נשימה בין 7 אגמי הקרחונים ברילה + רכבל כיסאות פתוח וערב תרמי בווילה",
+    keyAlert: "🏔️ טיפ שטח מהלב: הרכבל מפיונרסקה פעיל בשעות 08:30–16:30. בגובה 2,500 מטר (אגם הדמעה) יש רוח קרירה — קחו שכבות פליז ומעיל רוח בתיק! סיום הטרק מאפשר לקפוץ בערב ל-e-Bike Bansko להתאמת אופניים קלה לקראת יום חמישי.",
     trailDetails: {
-      name: "Five Lakes Loop (Banderishki Lakes)",
-      referenceUrl: "https://www.wikiloc.com/hiking-trails/okoto-lake-lago-dalgoto-and-muratovo-ezero-from-vihren-hut-270168580",
-      distance: "8.27 ק״מ",
-      elevationGain: "+468 מטר / -468 מטר",
-      duration: "~4.5–5 שעות (קצב רגוע)",
-      maxAltitude: "2,318 מטר",
-      difficulty: "בינוני נעים (Moderate) — שבילים מסומנים, מעט בולדרים ליד האגמים",
-      routePoints: "Vihren Hut → Okoto → Zhabeshko → Dalgoto → Ribno → Muratovo → Vihren Hut"
+      name: "Seven Rila Lakes Loop (Седемте рилски езера)",
+      referenceUrl: "https://www.wikiloc.com/hiking-trails/seven-rila-lakes-panichishte-sedemte-rilski-ezera-26388481",
+      distance: "9.2 ק״מ",
+      elevationGain: "+510 מטר / -510 מטר",
+      duration: "~4.5–5.5 שעות (קצב צילום ורוגע)",
+      maxAltitude: "2,535 מטר",
+      difficulty: "בינוני נעים (Moderate) — רכבל כיסאות נופי, שביל מסומן היטב",
+      routePoints: "Pionerska Lift → Rilski Ezera Hut → Dolnoto → Ribnoto → Trilistnika → Bliznaka → Babreka → Okoto → Sulzata → Plateau → Upper Lift"
     },
     timeline: [
-      { time: "07:30", action: "קפה וארוחת בוקר בווילה, בדיקת מזג אוויר ופתיחת כביש" },
-      { time: "08:15", action: "נסיעה יפהפייה בעלייה לבקתת ויחרן (Vihren Hut, כ-40 דק')" },
-      { time: "09:00", action: "תחילת המסלול בין חמשת האגמים האלפיניים עם נופי שלכת זהובים" },
-      { time: "14:00", action: "סיום הטרק, מנוחה בבקתת ויחרן וירידה חזרה לבאניה" },
-      { time: "16:00", action: "התרעננות בווילה וארוחה קלה לפני היציאה לספא" },
-      { time: "17:30", action: "ערב זוגי בספא Pulse Therme: מעיינות חמים, סאונות וטיפולי עיסוי (עד 21:30)" },
-      { time: "22:00", action: "חזרה לווילה ברוגע עמוק והכנות לקראת יום הפסגה" }
+      { time: "07:30", action: "קפה וארוחת בוקר בווילה, התארגנות עם שכבות חמות ונשנושים לדרך" },
+      { time: "08:15", action: "נסיעה צפונה ברכב (VW T-Roc) לעבר רכס הרי רילה (כ-85 ק״מ, כשעה ו-40 דק')" },
+      { time: "10:00", action: "הגעה לחניית רכבל שבעת האגמים (בקתת פיונרסקה / Pionerska Hut), רכישת כרטיסים ועולים ברכבל הכיסאות הפתוח (20 דק' נוף אלפיני)" },
+      { time: "10:30", action: "הגעה לבקתת רילסקי אזרה (2,150 מ') ותחילת הטרק המעגלי בין 7 האגמים הקרחוניים" },
+      { time: "13:00", action: "תצפית שיא פנורמית מעל אגם הדמעה (2,535 מ') — מראה עוצר נשימה של כל 7 האגמים יחד!" },
+      { time: "15:15", action: "חזרה לבקתת הרכבל העליונה וירידה ברכבל (חובה לתפוס רכבל לפני סגירה ב-16:30)" },
+      { time: "16:00", action: "נסיעה חזרה דרומה לעמק בנסקו ובאניה" },
+      { time: "17:45", action: "עצירה ב-e-Bike Bansko להתאמת אופניים קלה לגיל (אם יש כוח, או שדוחים לרביעי)" },
+      { time: "19:00", action: "טבילה חלומית מרגיעה בבריכה התרמית החמה בווילה (38°C) או בספא Pulse Therme" }
     ],
     checklist: [
-      "הורדת מסלול GPX לטלפון לשימוש Offline",
-      "נעלי טרק נוחות, שכבות ביגוד ומעיל חם",
-      "מים ונשנושי אנרגיה טעימים לדרך",
-      "מטען נייד (Power Bank) טעון בתיק",
-      "ציוד לספא בערב: בגדי ים, כפכפים ומגבות",
-      "שיחה קצרה לספא לוודא שעת עיסוי זוגי"
+      "נעלי הליכה/טרקים איכותיות ושכבות ביגוד (פליז + מעיל רוח/גשם ל-2,500 מ')",
+      "כרטיסי רכבל הלוך-חזור (כ-25-30 BGN לאדם, ירידה אחרונה עד 16:30)",
+      "מים ונשנושי אנרגיה ליום שלם בהר",
+      "הורדת מפת ומסלול 7 האגמים לטלפון ב-Offline",
+      "סגירת התאמת אופניים ב-e-Bike Bansko (הערב או מחר ברביעי)",
+      "טבילה בבריכה התרמית החמה בווילה להרפיית שרירים"
     ],
-    planB: "אם בהר הגבוה יש עננות כבדה או גשם: עושים טיול מקוצר רק עד אגם מוראטובו הקרוב, הולכים בשבילי היער הנמוכים והרומנטיים, או מקדימים את הספא והמים החמים."
+    planB: "אם יש רוחות חזקות ברכס העליון או שהרכבל סגור: מטיילים בחלק הנמוך של האגמים ביער, או מבקרים במנזר רילה (Rila Monastery) המפורסם שנמצא בקרבת מקום ומוגן מרוחות."
   },
   {
     dayNumber: 3,
@@ -514,13 +516,51 @@ export const DAYS_PLAN = [
 
 export const TRAILS_LIST = [
   {
-    id: "five-lakes",
-    name: "חמשת האגמים (Five Lakes Loop)",
-    wikilocTitle: "Okoto lake, Lago Dalgoto and Muratovo ezero from Vihren hut",
-    referenceUrl: "https://www.wikiloc.com/hiking-trails/okoto-lake-lago-dalgoto-and-muratovo-ezero-from-vihren-hut-270168580",
+    id: "rila-lakes",
+    name: "שבעת אגמי רילה (Seven Rila Lakes Loop)",
+    wikilocTitle: "Seven Rila Lakes - Panichishte (Sedemte rilski ezera)",
+    referenceUrl: "https://www.wikiloc.com/hiking-trails/seven-rila-lakes-panichishte-sedemte-rilski-ezera-26388481",
     status: "PLANNED",
     dayAssigned: 2,
     datePlanned: "6.10.2026",
+    distanceKm: 9.2,
+    elevationGainM: 510,
+    elevationLossM: 510,
+    durationHours: "~4.5–5.5 שעות (קצב צילום ורוגע)",
+    maxAltitudeM: 2535,
+    difficulty: "בינוני נעים (Moderate) — רכבל כיסאות פתוח",
+    trailType: "מעגלי (Loop)",
+    startPoint: "בקתת פיונרסקה / רכבל רילה (Pionerska Hut)",
+    lakes: [
+      "אגם הדמעה (Salzata / The Teardrop - 2535m) — הגבוה והצלול ביותר",
+      "אגם העין (Okoto / The Eye - 2440m) — העמוק ביותר (37.5 מ')",
+      "אגם הכליה (Babreka / The Kidney - 2282m) — המפורסם והמצולם ביותר",
+      "אגם התאומים (Bliznaka / The Twin - 2243m) — בעל השטח הגדול ביותר",
+      "אגם התלתן (Trilistnika / The Trefoil - 2216m) — צורה בלתי רגולרית",
+      "אגם הדגים (Ribnoto / The Fish Lake - 2184m) — הרדוד ביותר, סמוך לבקתה",
+      "האגם התחתון (Dolnoto / The Lower Lake - 2095m) — מנקז את כל האגמים"
+    ],
+    hazards: [
+      "שעת סגירת רכבל כיסאות: ירידה אחרונה עד 16:30! לתכנן זמנים בהתאם",
+      "רוחות קרירות ושינויי מזג אוויר פתאומיים בפסגת האגמים (2,535 מ')",
+      "שבילים סלעיים בירידה מהאוכף — נעלי טרקים איכותיות חובה",
+      "נסיעה של כשעה ו-40 דק' מבאניה/בנסקו לחניית הרכבל (Pionerska)"
+    ],
+    gpxFilename: "Seven_Rila_Lakes_Loop.gpx",
+    externalLinks: {
+      wikiloc: "https://www.wikiloc.com/hiking-trails/seven-rila-lakes-panichishte-sedemte-rilski-ezera-26388481",
+      googleMaps: "https://maps.google.com/?q=42.2398,23.3275",
+      waze: "https://waze.com/ul?ll=42.2398,23.3275&navigate=yes"
+    }
+  },
+  {
+    id: "five-lakes",
+    name: "חמשת האגמים (Five Lakes Loop - חלופת פירין)",
+    wikilocTitle: "Okoto lake, Lago Dalgoto and Muratovo ezero from Vihren hut",
+    referenceUrl: "https://www.wikiloc.com/hiking-trails/okoto-lake-lago-dalgoto-and-muratovo-ezero-from-vihren-hut-270168580",
+    status: "BACKUP",
+    dayAssigned: null,
+    datePlanned: "חלופה בפירין",
     distanceKm: 8.27,
     elevationGainM: 468,
     elevationLossM: 468,
@@ -650,7 +690,7 @@ export const KOSHER_GUIDE = {
 export const INITIAL_VERIFIED_PRODUCTS = [];
 
 export const INITIAL_PACKING_LIST = [
-  { id: "pack-insurance-moriah", category: "מסמכים וכספים", text: "⚠️ להסדיר ביטוח נסיעות לחו״ל למוריה (מתחת לגיל 24 - לוודא כיסוי צעירים + הרחבת ספורט אתגרי וחילוץ הררי)", checked: false },
+  { id: "pack-insurance-moriah", category: "מסמכים וכספים", text: "ביטוח נסיעות לחו״ל למוריה (מתחת לגיל 24) — הוסדר ומאושר במלואו! ✅", checked: true },
   { id: "pack-insurance-general", category: "מסמכים וכספים", text: "פוליסות ביטוח נסיעות לחו״ל שמורות בטלפון ב-Offline (כולל ספורט אתגרי וחילוץ)", checked: false },
   { id: "pack-1", category: "מסמכים וכספים", text: "דרכונים (בתוקף לפחות 6 חודשים)", checked: false },
   { id: "pack-2", category: "מסמכים וכספים", text: "רישיונות נהיגה בתוקף (אביהו + גיל)", checked: false },

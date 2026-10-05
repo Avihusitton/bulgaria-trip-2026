@@ -31,8 +31,24 @@ export const VIHREN_PEAK_COORDINATES = [
   { lat: 41.7558, lng: 23.4158, ele: 1950, name: "חזרה לבקתת ויחרן (Vihren Hut)" }
 ];
 
+export const SEVEN_RILA_LAKES_COORDINATES = [
+  { lat: 42.2398, lng: 23.3275, ele: 1580, name: "בקתת פיונרסקה ותחנת רכבל תחתונה (Pionerska Hut Lift Station)" },
+  { lat: 42.2132, lng: 23.3270, ele: 2150, name: "בקתת רילסקי אזרה ותחנת רכבל עליונה (Rilski Ezera Hut - 2,150 מ')" },
+  { lat: 42.2100, lng: 23.3210, ele: 2095, name: "אגם הדולנוטו / התחתון (Dolnoto Lake - 2,095 מ')" },
+  { lat: 42.2030, lng: 23.3200, ele: 2184, name: "אגם ריבנו / הדגים והבקתה הישנה (Ribnoto Lake - 2,184 מ')" },
+  { lat: 42.2045, lng: 23.3150, ele: 2216, name: "אגם התלתן (Trilistnika Lake - 2,216 מ')" },
+  { lat: 42.2010, lng: 23.3100, ele: 2243, name: "אגם התאומים (Bliznaka Lake - 2,243 מ')" },
+  { lat: 42.2055, lng: 23.3030, ele: 2282, name: "אגם הכליה (Babreka Lake - 2,282 מ')" },
+  { lat: 42.2030, lng: 23.2980, ele: 2440, name: "אגם העין (Okoto Lake - 2,440 מ', עומק 37.5 מ')" },
+  { lat: 42.1990, lng: 23.2950, ele: 2535, name: "אגם הדמעה ופסגת התצפית (Sulzata Lake / Lake Peak - 2,535 מ')" },
+  { lat: 42.2060, lng: 23.3120, ele: 2300, name: "שביל הרמה הנופי חזרה (Plateau Trail)" },
+  { lat: 42.2132, lng: 23.3270, ele: 2150, name: "חזרה לתחנת הרכבל העליונה (Rilski Ezera Hut)" }
+];
+
 export const MAP_LOCATIONS = [
-  { id: "vihren-hut", name: "בקתת ויחרן (Vihren Hut)", lat: 41.7558, lng: 23.4158, type: "hut", desc: "נקודת היציאה לטרקים (1,950 מ')" },
+  { id: "rila-lift", name: "רכבל שבעת אגמי רילה (Pionerska)", lat: 42.2398, lng: 23.3275, type: "lift", desc: "חנייה ותחנת רכבל תחתונה (1,580 מ')" },
+  { id: "rila-lakes", name: "שבעת אגמי רילה (Rila Lakes)", lat: 42.2030, lng: 23.2980, type: "peak", desc: "שמורת 7 האגמים הקרחוניים (עד 2,535 מ')" },
+  { id: "vihren-hut", name: "בקתת ויחרן (Vihren Hut)", lat: 41.7558, lng: 23.4158, type: "hut", desc: "נקודת היציאה לטרקים בפירין (1,950 מ')" },
   { id: "vihren-peak", name: "פסגת ויחרן (2,914 מ')", lat: 41.7672, lng: 23.3992, type: "peak", desc: "הפסגה הגבוהה ביותר בפירין" },
   { id: "three-peaks", name: "Three Peaks Thermal Villas", lat: 41.8752, lng: 23.5265, type: "hotel", desc: "מקום הלינה בבאניה + מים תרמיים" },
   { id: "pulse-therme", name: "ספא Pulse Therme", lat: 41.8760, lng: 23.5280, type: "spa", desc: "מתחם הספא והבריכות התרמיות בבאניה" },

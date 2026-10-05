@@ -98,63 +98,13 @@ export default function HomeTab({
       {/* 2. IMPORTANT PRE-TRIP ESSENTIALS — דברים חשובים להסדרה */}
       <div className="space-y-3">
         <div className="flex items-center justify-between px-1">
-          <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full border border-amber-200 font-mono">
-            לפני ההמראה · דברים חשובים
+          <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full border border-emerald-300 font-mono">
+            ביטוחים מוסדרים במלואם ✅
           </span>
-          <h3 className="font-editorial font-bold text-sm text-[#261f19]">משימות פתוחות להסדרה</h3>
+          <h3 className="font-editorial font-bold text-sm text-[#261f19]">תיאומים ופינוקים במסע</h3>
         </div>
 
-        {/* 2A. URGENT ALERT: MORIAH TRAVEL INSURANCE (UNDER 24) */}
-        <div className="p-1 rounded-[1.75rem] bg-[#fbf0ea] ring-1 ring-[#eecbc0] shadow-xs">
-          <div className="rounded-[calc(1.75rem-0.25rem)] bg-white p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-3">
-            <div className="flex items-start justify-between gap-2">
-              <span className="text-[10px] font-bold bg-[#8a2a16] text-white px-2.5 py-1 rounded-full shrink-0">
-                ⏳ טרם הוסדר · דחוף
-              </span>
-              <div className="flex items-center gap-2 font-bold text-base text-[#261f19]">
-                <span>ביטוח נסיעות לחו״ל — מוריה</span>
-                <div className="w-7 h-7 rounded-full bg-[#fcedea] text-[#cf482c] flex items-center justify-center shrink-0">
-                  <ShieldAlert className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#fff8f5] border border-[#f7dcd3] rounded-2xl p-3 text-xs text-[#8a2a16] space-y-1.5 leading-relaxed">
-              <div className="font-bold flex items-center gap-1.5">
-                <span>⚠️ שימו לב: מוריה מתחת לגיל 24</span>
-              </div>
-              <p className="text-[#642b1d]">
-                כרגע עוד לא הסדרנו את הביטוח למוריה כי היא מתחת לגיל 24 (מדרג גיל צעיר הדורש חיתום מותאם). 
-                חובה לוודא שהפוליסה כוללת הרחבה מלאה ל<b>ספורט אתגרי</b> ו<b>איתור וחילוץ הררי</b> לקראת הטרקים ורכיבת ה-e-MTB בפירין!
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-2 pt-0.5">
-              <a
-                href="https://www.passportcard.co.il/"
-                target="_blank"
-                rel="noreferrer"
-                className="group flex items-center justify-between bg-[#1f3f31] hover:bg-[#162e24] text-white font-bold py-2.5 px-3.5 rounded-full text-xs shadow-xs transition-all duration-200 active:scale-[0.98]"
-              >
-                <span>הסדרת פוליסה אונליין</span>
-                <div className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <ExternalLink className="w-3 h-3 text-white" />
-                </div>
-              </a>
-              <a
-                href="tel:*9912"
-                className="group flex items-center justify-between bg-white hover:bg-[#f7f2ea] text-[#332b24] font-bold py-2.5 px-3.5 rounded-full text-xs border border-[#ddd3c4] transition-all duration-200 active:scale-[0.98]"
-              >
-                <span>מוקד PassportCard (*9912)</span>
-                <div className="w-6 h-6 rounded-full bg-[#f2ece2] flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <Phone className="w-3 h-3 text-[#706456]" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* 2B. BOUTIQUE COUPLES CONCIERGE — MASSAGE & SPA RESERVATION */}
+        {/* 2A. BOUTIQUE COUPLES CONCIERGE — MASSAGE & SPA RESERVATION */}
         <div className="p-1 rounded-[1.75rem] bg-[#f2e5dc]/80 ring-1 ring-[#dec4b4]/70 shadow-xs">
           <div className="rounded-[calc(1.75rem-0.25rem)] bg-[#fffaf6] p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-3">
             <div className="flex items-center justify-between">
@@ -170,7 +120,7 @@ export default function HomeTab({
             </div>
 
             <p className="text-xs text-[#52463b] leading-relaxed">
-              נשאר להזמין תור לעיסוי זוגי כדי להבטיח מטפלים זמינים בשעה שנוחה לנו. מומלץ לחייג ישירות לספא ולשריין תור לערב ה-6.10, ישר אחרי הטרק הנפלא של 5 האגמים!
+              נשאר להזמין תור לעיסוי זוגי כדי להבטיח מטפלים זמינים בשעה שנוחה לנו. מומלץ לחייג ישירות לספא ולשריין תור לערב ה-6.10, ישר אחרי הטרק המרהיב של שבעת אגמי רילה!
             </p>
 
             <div className="grid grid-cols-2 gap-2.5 pt-0.5">
@@ -201,6 +151,7 @@ export default function HomeTab({
           </div>
         </div>
       </div>
+
 
       {/* 3. TODAY OPERATIONAL CHAPTER (Double-Bezel Architecture) */}
       <div className="bezel-outer">
@@ -293,35 +244,37 @@ export default function HomeTab({
               </div>
             )}
 
-            {/* Day 2: Five Lakes */}
+            {/* Day 2: Seven Rila Lakes */}
             {isDay2 && (
               <div className="space-y-2">
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=41.7558,23.4158"
+                  href="https://www.google.com/maps/dir/?api=1&destination=42.2398,23.3275"
                   target="_blank"
                   rel="noreferrer"
                   className="group w-full flex items-center justify-between bg-[#1a382b] hover:bg-[#12281e] text-white font-medium py-3.5 px-5 rounded-full text-xs shadow-sm transition-all active:scale-[0.98]"
                 >
-                  <span className="font-editorial font-bold text-sm">נווט לחניית בקתת ויחרן (Vihren Hut)</span>
+                  <span className="font-editorial font-bold text-sm">נווט לרכבל 7 אגמי רילה (Pionerska Hut)</span>
                   <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
                     <Navigation className="w-4 h-4 text-white" />
                   </div>
                 </a>
                 <div className="grid grid-cols-2 gap-2">
                   <button
-                    onClick={() => onOpenTrail("five-lakes")}
+                    onClick={() => onOpenTrail("rila-lakes")}
                     className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f6f1e8] text-[#1a382b] font-medium py-2.5 px-3 rounded-full text-xs border border-[#ded5c5] transition active:scale-95"
                   >
                     <MapPin className="w-3.5 h-3.5 text-blue-600" />
-                    <span>מפת מסלול אופליין</span>
+                    <span>מפת 7 האגמים אופליין</span>
                   </button>
-                  <button
-                    onClick={onOpenGatesModal}
-                    className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f6f1e8] text-[#8a2a16] font-medium py-2.5 px-3 rounded-full text-xs border border-[#eed0c8] transition active:scale-95"
+                  <a
+                    href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("היי, אנחנו מטיילים היום באגמי רילה. נגיע להתאמת אופניים הערב או מחר ברביעי לקראת יום חמישי!")}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f6f1e8] text-[#1a382b] font-medium py-2.5 px-3 rounded-full text-xs border border-[#ded5c5] transition active:scale-95"
                   >
-                    <AlertTriangle className="w-3.5 h-3.5 text-[#cf482c]" />
-                    <span>בדיקת כביש ורולר-סקי</span>
-                  </button>
+                    <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>WhatsApp לתיאום אופניים</span>
+                  </a>
                 </div>
               </div>
             )}

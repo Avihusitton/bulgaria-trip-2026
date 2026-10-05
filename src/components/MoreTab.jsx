@@ -941,14 +941,14 @@ export default function MoreTab({
               },
               {
                 key: "moriah_insurance",
-                title: "ביטוח נסיעות לחו״ל — מוריה",
-                subtitle: "מתחת לגיל 24 (חיתום מותאם לצעירים + הרחבת ספורט אתגרי וחילוץ הררי)",
-                file: "./docs/MORIAH_TRAVEL_INSURANCE_PENDING.pdf",
-                code: "סטטוס: טרם הוסדר · דרוש טיפול לפני הטיסה",
-                badge: "⚠️ טרם הוסדר · דחוף",
-                badgeColor: "bg-rose-100 text-rose-800 border-rose-300",
+                title: "פוליסת ביטוח נסיעות לחו״ל — מוריה",
+                subtitle: "כיסוי מלא מתחת לגיל 24 + הרחבת ספורט אתגרי, חילוץ ואיתור הררי",
+                file: "./docs/MORIAH_TRAVEL_INSURANCE_POLICY.pdf",
+                code: "סטטוס: הוסדר ומאושר במלואו ✅",
+                badge: "הוסדר ומאושר ✅",
+                badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
                 portalUrl: "https://www.passportcard.co.il/",
-                portalLabel: "הסדרה ישירה אונליין"
+                portalLabel: "פורטל PassportCard"
               }
             ].map((doc) => {
               const customFile = uploadedFiles[doc.key];

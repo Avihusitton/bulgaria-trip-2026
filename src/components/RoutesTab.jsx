@@ -5,7 +5,7 @@ import {
   ArrowUpRight, Clock, Activity, Bike
 } from "lucide-react";
 import { TRAILS_LIST, STATUS_TYPES } from "../data/tripData";
-import { FIVE_LAKES_COORDINATES, VIHREN_PEAK_COORDINATES, downloadGpxFile } from "../data/gpxData";
+import { FIVE_LAKES_COORDINATES, VIHREN_PEAK_COORDINATES, SEVEN_RILA_LAKES_COORDINATES, downloadGpxFile } from "../data/gpxData";
 
 export default function RoutesTab({ 
   onOpenMapModal, 
@@ -15,6 +15,7 @@ export default function RoutesTab({
   onOpenPlanB
 }) {
   const trailImages = {
+    "rila-lakes": "./images/rila-lakes.jpg",
     "five-lakes": "./images/five-lakes.jpg",
     "vihren-peak": "./images/vihren-peak.jpg",
     "ebike-valley": "./images/ebike-bansko.jpg",
@@ -34,9 +35,9 @@ export default function RoutesTab({
           <span>מפה טופוגרפית 🗺️</span>
         </button>
         <div>
-          <span className="text-[10px] font-magazine font-black tracking-widest text-[#9e4624] block uppercase">EXPEDITION TRAILS · PIRIN</span>
+          <span className="text-[10px] font-magazine font-black tracking-widest text-[#9e4624] block uppercase">EXPEDITION TRAILS · PIRIN & RILA</span>
           <h2 className="text-2xl font-black font-editorial text-[#162c21]">
-            מסלולי הטיול בהרי פירין
+            מסלולי הטיול בהרי רילה ופירין
           </h2>
         </div>
       </div>
@@ -45,7 +46,7 @@ export default function RoutesTab({
       <div className="bg-[#f7f4ee] border border-[#e5dfd5] rounded-2xl p-3.5 text-xs text-[#52493d] flex items-start gap-2.5">
         <Compass className="w-4 h-4 text-[#204234] shrink-0 mt-0.5" />
         <div className="leading-relaxed">
-          <b>סנכרון שטח ו-Offline:</b> כל המסלולים מבוססים על הקלטות Wikiloc מאומתות. קובצי ה-GPX נשמרים ומיוצאים ישירות מהמכשיר עבור אפליקציות שטח (Garmin / OsmAnd / Wikiloc) ללא צורך בקליטה בהר.
+          <b>סנכרון שטח ו-Offline:</b> כל המסלולים מבוססים על הקלטות שטח מאומתות. קובצי ה-GPX נשמרים ומיוצאים ישירות מהמכשיר עבור אפליקציות שטח (Garmin / OsmAnd / Wikiloc) ללא צורך בקליטה בהר.
         </div>
       </div>
 
@@ -53,6 +54,7 @@ export default function RoutesTab({
       <div className="space-y-4">
         {TRAILS_LIST.map((trail) => {
           const isOfflineSaved = !!offlineTrails[trail.id];
+          const isRilaLakes = trail.id === "rila-lakes";
           const isFiveLakes = trail.id === "five-lakes";
           const isVihrenPeak = trail.id === "vihren-peak";
           const isEbike = trail.id === "ebike-valley";
@@ -62,7 +64,9 @@ export default function RoutesTab({
             <div
               key={trail.id}
               className={`rounded-3xl border overflow-hidden bg-white shadow-xs transition-all ${
-                isVihrenPeak
+                isRilaLakes
+                  ? "border-[#1d4ed8]"
+                  : isVihrenPeak
                   ? "border-[#b85c39]"
                   : isFiveLakes
                   ? "border-[#204234]"
@@ -80,7 +84,9 @@ export default function RoutesTab({
 
                 <div className="relative z-10 flex items-end justify-between">
                   <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border backdrop-blur-xs ${
-                    isVihrenPeak
+                    isRilaLakes
+                      ? "bg-blue-950/80 border-blue-400 text-blue-200"
+                      : isVihrenPeak
                       ? "bg-rose-950/80 border-rose-400 text-rose-200"
                       : "bg-[#162c21]/80 border-emerald-400 text-emerald-200"
                   }`}>
@@ -105,7 +111,7 @@ export default function RoutesTab({
                 <div className="grid grid-cols-3 gap-2 text-center text-xs bg-white p-2.5 rounded-2xl border border-[#ded8ce] font-mono">
                   <div>
                     <span className="block text-slate-400 text-[10px] font-sans">מרחק</span>
-                    <span className="font-bold text-[#1c2722]">{trail.distanceKm}</span>
+                    <span className="font-bold text-[#1c2722]">{trail.distanceKm} ק״מ</span>
                   </div>
                   <div>
                     <span className="block text-slate-400 text-[10px] font-sans">טיפוס אנכי</span>
@@ -135,12 +141,20 @@ export default function RoutesTab({
                     <span className="font-bold text-[#1c2722]">{trail.trailType}</span>
                     <span className="text-slate-500">מבנה המסלול:</span>
                   </div>
+                  {trail.startPoint && (
+                    <div className="flex justify-between border-b border-[#ece6db] pb-1">
+                      <span className="font-bold text-[#1c2722]">{trail.startPoint}</span>
+                      <span className="text-slate-500">נקודת יציאה:</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Lake List / Waypoints */}
                 {trail.lakes && (
                   <div className="bg-[#f0f6f2] p-3 rounded-2xl border border-[#d2e2d7] text-xs space-y-1">
-                    <span className="font-bold text-[#204234] block mb-1">חמשת האגמים בלולאה:</span>
+                    <span className="font-bold text-[#204234] block mb-1">
+                      {isRilaLakes ? "שבעת האגמים במסלול:" : "האגמים בלולאה:"}
+                    </span>
                     <ul className="list-disc list-inside space-y-0.5 text-[#2c5342]">
                       {trail.lakes.map((lake, lIdx) => (
                         <li key={lIdx}>{lake}</li>
@@ -195,13 +209,23 @@ export default function RoutesTab({
                   </label>
 
                   <div className="grid grid-cols-2 gap-2">
-                    {(isFiveLakes || isVihrenPeak) && (
+                    {(isRilaLakes || isFiveLakes || isVihrenPeak) && (
                       <button
                         onClick={() => onOpenMapModal(trail.id)}
                         className="flex items-center justify-center gap-1 bg-[#204234] hover:bg-[#183328] text-white font-medium py-2 rounded-xl text-xs transition shadow-xs"
                       >
                         <Map className="w-3.5 h-3.5" />
                         <span>צפה במפת GPX</span>
+                      </button>
+                    )}
+
+                    {isRilaLakes && (
+                      <button
+                        onClick={() => downloadGpxFile("Seven_Rila_Lakes_Loop.gpx", "Seven Rila Lakes Loop", SEVEN_RILA_LAKES_COORDINATES)}
+                        className="flex items-center justify-center gap-1 bg-[#1e3a8a] hover:bg-[#172554] text-white font-medium py-2 rounded-xl text-xs transition"
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                        <span>הורד GPX מקומי</span>
                       </button>
                     )}
 
@@ -225,9 +249,9 @@ export default function RoutesTab({
                       </button>
                     )}
 
-                    {/* Verified Navigation Endpoint directly to Vihren Hut trailhead */}
+                    {/* Navigation Endpoint */}
                     <a
-                      href="https://www.google.com/maps/dir/?api=1&destination=41.7558,23.4158"
+                      href={trail.externalLinks?.googleMaps || "https://www.google.com/maps/dir/?api=1&destination=41.7558,23.4158"}
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center justify-center gap-1 bg-white hover:bg-[#f4efe8] text-[#204234] font-medium py-2 rounded-xl text-xs border border-[#ded8ce] transition"
