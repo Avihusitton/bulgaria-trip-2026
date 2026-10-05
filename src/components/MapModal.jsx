@@ -28,7 +28,7 @@ export default function MapModal({ isOpen, onClose, activeTrailId }) {
 
       // Initial center: if Rila lakes, center in Rila, else center around Vihren Hut
       const isRila = activeTrailId === "rila-lakes";
-      const initialCenter = isRila ? [42.2132, 23.3270] : [41.7558, 23.4158];
+      const initialCenter = isRila ? [42.2132, 23.3270] : [41.75666, 23.41659];
 
       const map = L.map(mapContainerRef.current, {
         center: initialCenter,
@@ -160,7 +160,7 @@ export default function MapModal({ isOpen, onClose, activeTrailId }) {
   const isRila = activeTrailId === "rila-lakes";
   const gMapsUrl = isRila 
     ? "https://maps.google.com/?q=42.2398,23.3275" 
-    : "https://maps.google.com/?q=41.7558,23.4158";
+    : "https://maps.google.com/?q=41.75666,23.41659";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 bg-black/75 backdrop-blur-sm animate-fade-in">

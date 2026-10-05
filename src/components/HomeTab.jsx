@@ -25,8 +25,8 @@ export default function HomeTab({
   // Current active day object
   const currentDay = DAYS_PLAN.find(d => d.date === selectedDate) || DAYS_PLAN[0];
   const isDay1 = currentDay.dayNumber === 1;
-  const isDay2 = currentDay.dayNumber === 2; // Five Lakes
-  const isDay3 = currentDay.dayNumber === 3; // Vihren Peak
+  const isDay2 = currentDay.dayNumber === 2; // Vihren Peak Loop
+  const isDay3 = currentDay.dayNumber === 3; // Five Lakes Loop
   const isDay4 = currentDay.dayNumber === 4; // e-MTB
   const isDay5 = currentDay.dayNumber === 5; // Return
 
@@ -120,7 +120,7 @@ export default function HomeTab({
             </div>
 
             <p className="text-xs text-[#52463b] leading-relaxed">
-              נשאר להזמין תור לעיסוי זוגי כדי להבטיח מטפלים זמינים בשעה שנוחה לנו. מומלץ לחייג ישירות לספא ולשריין תור לערב ה-6.10, ישר אחרי הטרק המרהיב של שבעת אגמי רילה!
+              נשאר להזמין תור לעיסוי זוגי כדי להבטיח מטפלים זמינים בשעה שנוחה לנו. מומלץ לחייג ישירות לספא ולשריין תור לאחד הערבים, מושלם להרפיית השרירים אחרי הטרק בהר!
             </p>
 
             <div className="grid grid-cols-2 gap-2.5 pt-0.5">
@@ -131,7 +131,7 @@ export default function HomeTab({
               >
                 <span>חייג להזמנת עיסוי</span>
                 <div className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <Phone className="w-3 h-3 text-white" />
+                  <Phone className="w-3.5 h-3.5 text-white" />
                 </div>
               </a>
 
@@ -144,7 +144,7 @@ export default function HomeTab({
               >
                 <span>אתר הספא Pulse</span>
                 <div className="w-6 h-6 rounded-full bg-[#f2ece2] flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <ExternalLink className="w-3 h-3 text-[#706456]" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#706456]" />
                 </div>
               </a>
             </div>
@@ -244,51 +244,16 @@ export default function HomeTab({
               </div>
             )}
 
-            {/* Day 2: Seven Rila Lakes */}
+            {/* Day 2: Vihren Peak Loop (הטרק הגדול בפירין) */}
             {isDay2 && (
               <div className="space-y-2">
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=42.2398,23.3275"
+                  href="https://www.google.com/maps/dir/?api=1&destination=41.75666,23.41659"
                   target="_blank"
                   rel="noreferrer"
                   className="group w-full flex items-center justify-between bg-[#1a382b] hover:bg-[#12281e] text-white font-medium py-3.5 px-5 rounded-full text-xs shadow-sm transition-all active:scale-[0.98]"
                 >
-                  <span className="font-editorial font-bold text-sm">נווט לרכבל 7 אגמי רילה (Pionerska Hut)</span>
-                  <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
-                    <Navigation className="w-4 h-4 text-white" />
-                  </div>
-                </a>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    onClick={() => onOpenTrail("rila-lakes")}
-                    className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f6f1e8] text-[#1a382b] font-medium py-2.5 px-3 rounded-full text-xs border border-[#ded5c5] transition active:scale-95"
-                  >
-                    <MapPin className="w-3.5 h-3.5 text-blue-600" />
-                    <span>מפת 7 האגמים אופליין</span>
-                  </button>
-                  <a
-                    href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("היי, אנחנו מטיילים היום באגמי רילה. נגיע להתאמת אופניים הערב או מחר ברביעי לקראת יום חמישי!")}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f6f1e8] text-[#1a382b] font-medium py-2.5 px-3 rounded-full text-xs border border-[#ded5c5] transition active:scale-95"
-                  >
-                    <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>WhatsApp לתיאום אופניים</span>
-                  </a>
-                </div>
-              </div>
-            )}
-
-            {/* Day 3: Vihren Peak */}
-            {isDay3 && (
-              <div className="space-y-2">
-                <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=41.7558,23.4158"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group w-full flex items-center justify-between bg-[#1a382b] hover:bg-[#12281e] text-white font-medium py-3.5 px-5 rounded-full text-xs shadow-sm transition-all active:scale-[0.98]"
-                >
-                  <span className="font-editorial font-bold text-sm">נווט לתחילת הטרק (בקתת ויחרן)</span>
+                  <span className="font-editorial font-bold text-sm">נווט ברכב לבקתת ויחרן (Vihren Hut)</span>
                   <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
                     <Navigation className="w-4 h-4 text-white" />
                   </div>
@@ -299,42 +264,86 @@ export default function HomeTab({
                     className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f6f1e8] text-[#1a382b] font-medium py-2.5 px-3 rounded-full text-xs border border-[#ded5c5] transition active:scale-95"
                   >
                     <MapPin className="w-3.5 h-3.5 text-blue-600" />
-                    <span>מפת פסגה (10.4 ק״מ)</span>
+                    <span>מפת פסגת ויחרן (10.4 ק״מ)</span>
                   </button>
                   <button
                     onClick={onOpenGatesModal}
                     className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f6f1e8] text-[#8a2a16] font-medium py-2.5 px-3 rounded-full text-xs border border-[#eed0c8] transition active:scale-95"
                   >
                     <AlertTriangle className="w-3.5 h-3.5 text-[#cf482c]" />
-                    <span>תנאי הר ומזג אוויר</span>
+                    <span>בדיקת כביש ורולר-סקי</span>
                   </button>
+                </div>
+              </div>
+            )}
+
+            {/* Day 3: Five Lakes Loop (חמשת אגמי בנדריצה) */}
+            {isDay3 && (
+              <div className="space-y-2">
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=41.75666,23.41659"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group w-full flex items-center justify-between bg-[#1a382b] hover:bg-[#12281e] text-white font-medium py-3.5 px-5 rounded-full text-xs shadow-sm transition-all active:scale-[0.98]"
+                >
+                  <span className="font-editorial font-bold text-sm">נווט ברכב לבקתת ויחרן (חמשת האגמים)</span>
+                  <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <Navigation className="w-4 h-4 text-white" />
+                  </div>
+                </a>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    onClick={() => onOpenTrail("five-lakes")}
+                    className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f6f1e8] text-[#1a382b] font-medium py-2.5 px-3 rounded-full text-xs border border-[#ded5c5] transition active:scale-95"
+                  >
+                    <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>מפת 5 האגמים (ב-Garmin)</span>
+                  </button>
+                  <a
+                    href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("היי, לקראת מחר (יום חמישי) של רכיבת ה-e-MTB: האם נתאם איסוף בבנסקו (Bulgaria St 12) או שתוכלו להביא את האופניים לווילה בבאניה?")}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f6f1e8] text-[#1a382b] font-medium py-2.5 px-3 rounded-full text-xs border border-[#ded5c5] transition active:scale-95"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>WhatsApp לתיאום אופניים למחר</span>
+                  </a>
                 </div>
               </div>
             )}
 
             {/* Day 4: e-MTB */}
             {isDay4 && (
-              <div className="grid grid-cols-2 gap-2">
+              <div className="space-y-2">
                 <a
-                  href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi! We are ready for bike delivery/pickup in Bansko today.")}`}
+                  href="https://www.google.com/maps/dir/?api=1&destination=12+Bulgaria+Street,+Bansko+2770"
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center justify-between bg-[#1a382b] hover:bg-[#12281e] text-white font-medium py-3 px-4 rounded-full text-xs shadow-xs transition-all active:scale-[0.98]"
+                  className="group w-full flex items-center justify-between bg-[#1a382b] hover:bg-[#12281e] text-white font-medium py-3.5 px-5 rounded-full text-xs shadow-sm transition-all active:scale-[0.98]"
                 >
-                  <span className="font-editorial font-bold">WhatsApp לאופניים</span>
+                  <span className="font-editorial font-bold text-sm">נווט ל-E-bike Bansko (רחוב בולגריה 12)</span>
                   <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-105 transition-transform">
-                    <MessageSquare className="w-3.5 h-3.5 text-white" />
+                    <Navigation className="w-4 h-4 text-white" />
                   </div>
                 </a>
-                <button
-                  onClick={() => onOpenTrail("ebike-valley")}
-                  className="group flex items-center justify-between bg-white hover:bg-[#f6f1e8] text-[#1a382b] font-medium py-3 px-4 rounded-full text-xs border border-[#ded5c5] transition-all active:scale-[0.98]"
-                >
-                  <span className="font-editorial">מסלולי רכיבה וקפה</span>
-                  <div className="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi! We are ready for bike delivery/pickup in Bansko today.")}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-1.5 bg-[#1a382b] hover:bg-[#12281e] text-white font-medium py-2.5 px-3 rounded-full text-xs shadow-xs transition active:scale-95"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5 text-white" />
+                    <span>WhatsApp לאופניים</span>
+                  </a>
+                  <button
+                    onClick={() => onOpenTrail("ebike-valley")}
+                    className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f6f1e8] text-[#1a382b] font-medium py-2.5 px-3 rounded-full text-xs border border-[#ded5c5] transition active:scale-95"
+                  >
                     <Bike className="w-3.5 h-3.5 text-emerald-700" />
-                  </div>
-                </button>
+                    <span>מסלול רכיבה וקפה (30-50 ק״מ)</span>
+                  </button>
+                </div>
               </div>
             )}
 

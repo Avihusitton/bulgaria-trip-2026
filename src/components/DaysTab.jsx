@@ -32,21 +32,21 @@ export default function DaysTab({
       accentBg: "bg-[#204234]"
     },
     2: {
-      image: "./images/rila-lakes.jpg",
-      tag: "שבעת אגמי רילה ורכבל כיסאות",
-      sentence: "טרק עוצר נשימה בין 7 אגמי הקרחונים ברילה, רכבל כיסאות פתוח וטבילה תרמית בווילה.",
-      accentBg: "bg-[#1d3d4d]"
+      image: "./images/vihren-peak.jpg",
+      tag: "העפלה לפסגת ויחרן (2,914 מ')",
+      sentence: "הטרק הגדול בפירין: נסיעה ברכב ישירות לבקתת ויחרן, עלייה דרך עמק הקאזאנה ואוכף הפרמקטה וירידה דרך קבאטה.",
+      accentBg: "bg-[#2c3338]"
     },
     3: {
-      image: "./images/vihren-peak.jpg",
-      tag: "רכס שיש אלפיני דרמטי",
-      sentence: "העפלה דרך עמק הקאזאנה אל פסגת ויחרן (2,914 מ') — הגג השישי בגובהו באירופה.",
-      accentBg: "bg-[#2c3338]"
+      image: "./images/five-lakes.jpg",
+      tag: "חמשת אגמי בנדריצה ופיקניק",
+      sentence: "יום קל ונינוח בפירין: נסיעה ברכב לבקתת ויחרן, מסלול 5 האגמים (8.35 ק״מ, מוזן ב-Garmin), פיקניק וספא מפנק בווילה.",
+      accentBg: "bg-[#1d3d4d]"
     },
     4: {
       image: "./images/ebike-bansko.jpg",
       tag: "שבילי יער, אופניים וקפה",
-      sentence: "רכיבת e-MTB זורמת ביערות עמק פירין, קפה מעולה בבנסקו וטבילה לילית בווילה.",
+      sentence: "רכיבת e-MTB זורמת וקלה (30–50 ק״מ ללא אנדורו) עם E-bike Bansko, קפה מעולה ושהייה בווילה עד חצות לקראת הטיסה.",
       accentBg: "bg-[#33462f]"
     },
     5: {
@@ -229,46 +229,13 @@ export default function DaysTab({
                     {day.dayNumber === 2 && (
                       <div className="space-y-2">
                         <a
-                          href="https://www.google.com/maps/dir/?api=1&destination=42.2398,23.3275"
+                          href="https://www.google.com/maps/dir/?api=1&destination=41.75666,23.41659"
                           target="_blank"
                           rel="noreferrer"
                           className="w-full flex items-center justify-center gap-1.5 bg-[#204234] hover:bg-[#183328] text-white font-medium py-2.5 px-3 rounded-xl text-xs transition active:scale-98"
                         >
                           <Navigation className="w-3.5 h-3.5" />
-                          <span>נווט לרכבל 7 אגמי רילה (Pionerska Hut)</span>
-                        </a>
-                        <div className="grid grid-cols-2 gap-2">
-                          <button
-                            onClick={() => onOpenTrail("rila-lakes")}
-                            className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f4efe8] text-[#204234] font-medium py-2 px-3 rounded-xl text-xs border border-[#d6cec0] transition active:scale-98"
-                          >
-                            <MapPin className="w-3.5 h-3.5 text-blue-600" />
-                            <span>פתח מפת 7 האגמים</span>
-                          </button>
-                          <a
-                            href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("היי, אנחנו מטיילים ברילה, נגיע לתיאום/פיטינג אופניים הערב או מחר ברביעי!")}`}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="flex items-center justify-center gap-1.5 bg-[#f5eee4] hover:bg-[#ece2d4] text-[#9e4624] font-medium py-2 px-3 rounded-xl text-xs border border-[#e5d5c0] transition active:scale-98"
-                          >
-                            <MessageSquare className="w-3.5 h-3.5 text-[#9e4624]" />
-                            <span>תיאום אופניים להערב/מחר</span>
-                          </a>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Day 3 Actions */}
-                    {day.dayNumber === 3 && (
-                      <div className="space-y-2">
-                        <a
-                          href="https://www.google.com/maps/dir/?api=1&destination=41.7558,23.4158"
-                          target="_blank"
-                          rel="noreferrer"
-                          className="w-full flex items-center justify-center gap-1.5 bg-[#204234] hover:bg-[#183328] text-white font-medium py-2.5 px-3 rounded-xl text-xs transition active:scale-98"
-                        >
-                          <Navigation className="w-3.5 h-3.5" />
-                          <span>נווט לבקתת ויחרן לתחילת ההעפלה</span>
+                          <span>נווט ברכב לבקתת ויחרן (41.75666, 23.41659)</span>
                         </a>
                         <div className="grid grid-cols-2 gap-2">
                           <button
@@ -291,25 +258,69 @@ export default function DaysTab({
                       </div>
                     )}
 
-                    {/* Day 4 Actions */}
-                    {day.dayNumber === 4 && (
-                      <div className="grid grid-cols-2 gap-2">
+                    {/* Day 3 Actions */}
+                    {day.dayNumber === 3 && (
+                      <div className="space-y-2">
                         <a
-                          href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}`}
+                          href="https://www.google.com/maps/dir/?api=1&destination=41.75666,23.41659"
                           target="_blank"
                           rel="noreferrer"
-                          className="flex items-center justify-center gap-1.5 bg-[#204234] hover:bg-[#183328] text-white font-medium py-2.5 px-3 rounded-xl text-xs transition active:scale-98"
+                          className="w-full flex items-center justify-center gap-1.5 bg-[#204234] hover:bg-[#183328] text-white font-medium py-2.5 px-3 rounded-xl text-xs transition active:scale-98"
                         >
-                          <MessageSquare className="w-3.5 h-3.5" />
-                          <span>WhatsApp לאופניים</span>
+                          <Navigation className="w-3.5 h-3.5" />
+                          <span>נווט ברכב לבקתת ויחרן (חמשת האגמים)</span>
                         </a>
-                        <button
-                          onClick={() => onOpenTrail("ebike-valley")}
-                          className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f4efe8] text-[#204234] font-medium py-2.5 px-3 rounded-xl text-xs border border-[#d6cec0] transition active:scale-98"
+                        <div className="grid grid-cols-2 gap-2">
+                          <button
+                            onClick={() => onOpenTrail("five-lakes")}
+                            className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f4efe8] text-[#204234] font-medium py-2 px-3 rounded-xl text-xs border border-[#d6cec0] transition active:scale-98"
+                          >
+                            <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                            <span>מפת 5 האגמים (ב-Garmin)</span>
+                          </button>
+                          <a
+                            href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("היי, לקראת מחר בחמישי: נשמח לתאם האם האיסוף מבנסקו (Bulgaria St 12) או שתביאו את האופניים לווילה בבאניה.")}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center justify-center gap-1.5 bg-[#f5eee4] hover:bg-[#ece2d4] text-[#9e4624] font-medium py-2 px-3 rounded-xl text-xs border border-[#e5d5c0] transition active:scale-98"
+                          >
+                            <MessageSquare className="w-3.5 h-3.5 text-[#9e4624]" />
+                            <span>תיאום אופניים למחר ב-WhatsApp</span>
+                          </a>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Day 4 Actions */}
+                    {day.dayNumber === 4 && (
+                      <div className="space-y-2">
+                        <a
+                          href="https://www.google.com/maps/dir/?api=1&destination=12+Bulgaria+Street,+Bansko+2770"
+                          target="_blank"
+                          rel="noreferrer"
+                          className="w-full flex items-center justify-center gap-1.5 bg-[#204234] hover:bg-[#183328] text-white font-medium py-2.5 px-3 rounded-xl text-xs transition active:scale-98"
                         >
-                          <Bike className="w-3.5 h-3.5 text-emerald-600" />
-                          <span>מסלול רכיבה וקפה</span>
-                        </button>
+                          <Navigation className="w-3.5 h-3.5" />
+                          <span>נווט ל-E-bike Bansko (רחוב בולגריה 12)</span>
+                        </a>
+                        <div className="grid grid-cols-2 gap-2">
+                          <a
+                            href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f4efe8] text-[#204234] font-medium py-2.5 px-3 rounded-xl text-xs border border-[#d6cec0] transition active:scale-98"
+                          >
+                            <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
+                            <span>WhatsApp ל-E-bike Bansko</span>
+                          </a>
+                          <button
+                            onClick={() => onOpenTrail("ebike-valley")}
+                            className="flex items-center justify-center gap-1.5 bg-white hover:bg-[#f4efe8] text-[#204234] font-medium py-2.5 px-3 rounded-xl text-xs border border-[#d6cec0] transition active:scale-98"
+                          >
+                            <Bike className="w-3.5 h-3.5 text-emerald-600" />
+                            <span>מסלול רכיבה וקפה</span>
+                          </button>
+                        </div>
                       </div>
                     )}
 

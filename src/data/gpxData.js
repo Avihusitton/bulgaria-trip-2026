@@ -1,8 +1,8 @@
 // Real GPS Coordinates and GPX Generator for Pirin National Park Trails
 
 export const FIVE_LAKES_COORDINATES = [
-  { lat: 41.7558, lng: 23.4158, ele: 1950, name: "בקתת ויחרן (Vihren Hut - נקודת יציאה וסיום)" },
-  { lat: 41.7538, lng: 41.7538 ? 23.4162 : 23.4162, ele: 1985, name: "שביל היציאה במעלה נחל בנדריצה" },
+  { lat: 41.75666, lng: 23.41659, ele: 1950, name: "בקתת ויחרן (хижа Вихрен - 41.75666, 23.41659 - יציאה וסיום)" },
+  { lat: 41.7538, lng: 23.4162, ele: 1985, name: "שביל היציאה במעלה נחל בנדריצה" },
   { lat: 41.7510, lng: 23.4170, ele: 2026, name: "אגם אוקוטו / העין (Okoto Lake - 2,026 מ')" },
   { lat: 41.7460, lng: 23.4168, ele: 2110, name: "מפלון ומעבר סלעי" },
   { lat: 41.7410, lng: 23.4160, ele: 2190, name: "אגם ריבנו / הדגים (Ribno Lake - 2,190 מ')" },
@@ -13,11 +13,11 @@ export const FIVE_LAKES_COORDINATES = [
   { lat: 41.7435, lng: 23.4075, ele: 2230, name: "אגם מוראטובו (Muratovo Lake - 2,230 מ')" },
   { lat: 41.7485, lng: 23.4105, ele: 2120, name: "ירידה במדרון הצפוני מעל הערוץ" },
   { lat: 41.7530, lng: 23.4135, ele: 2010, name: "מפגש עם שביל הגישה הראשי" },
-  { lat: 41.7558, lng: 23.4158, ele: 1950, name: "סיום וחזרה לבקתת ויחרן (Vihren Hut)" }
+  { lat: 41.75666, lng: 23.41659, ele: 1950, name: "סיום וחזרה לחניית בקתת ויחרן (хижа Вихрен)" }
 ];
 
 export const VIHREN_PEAK_COORDINATES = [
-  { lat: 41.7558, lng: 23.4158, ele: 1950, name: "בקתת ויחרן (Vihren Hut)" },
+  { lat: 41.75666, lng: 23.41659, ele: 1950, name: "חניית בקתת ויחרן (хижа Вихрен - 41.75666, 23.41659)" },
   { lat: 41.7595, lng: 23.4130, ele: 2080, name: "פיצול שבילים ירוק/אדום" },
   { lat: 41.7640, lng: 23.4090, ele: 2270, name: "כניסה לעמק הקרחוני הקטן" },
   { lat: 41.7680, lng: 23.4050, ele: 2445, name: "מחסה קאזאנה (Kazana Shelter / המכתש)" },
@@ -28,7 +28,7 @@ export const VIHREN_PEAK_COORDINATES = [
   { lat: 41.7640, lng: 23.4025, ele: 2750, name: "ירידה בשלוחה הדרומית לעבר הקבאטה" },
   { lat: 41.7610, lng: 23.4050, ele: 2600, name: "אוכף קבאטה (Kabata Saddle)" },
   { lat: 41.7580, lng: 23.4110, ele: 2280, name: "שביל הירידה הדרומי" },
-  { lat: 41.7558, lng: 23.4158, ele: 1950, name: "חזרה לבקתת ויחרן (Vihren Hut)" }
+  { lat: 41.75666, lng: 23.41659, ele: 1950, name: "חזרה לחניית בקתת ויחרן (хижа Вихрен)" }
 ];
 
 export const SEVEN_RILA_LAKES_COORDINATES = [
@@ -48,11 +48,11 @@ export const SEVEN_RILA_LAKES_COORDINATES = [
 export const MAP_LOCATIONS = [
   { id: "rila-lift", name: "רכבל שבעת אגמי רילה (Pionerska)", lat: 42.2398, lng: 23.3275, type: "lift", desc: "חנייה ותחנת רכבל תחתונה (1,580 מ')" },
   { id: "rila-lakes", name: "שבעת אגמי רילה (Rila Lakes)", lat: 42.2030, lng: 23.2980, type: "peak", desc: "שמורת 7 האגמים הקרחוניים (עד 2,535 מ')" },
-  { id: "vihren-hut", name: "בקתת ויחרן (Vihren Hut)", lat: 41.7558, lng: 23.4158, type: "hut", desc: "נקודת היציאה לטרקים בפירין (1,950 מ')" },
-  { id: "vihren-peak", name: "פסגת ויחרן (2,914 מ')", lat: 41.7672, lng: 23.3992, type: "peak", desc: "הפסגה הגבוהה ביותר בפירין" },
-  { id: "three-peaks", name: "Three Peaks Thermal Villas", lat: 41.8752, lng: 23.5265, type: "hotel", desc: "מקום הלינה בבאניה + מים תרמיים" },
+  { id: "vihren-hut", name: "בקתת ויחרן (хижа Вихрен)", lat: 41.75666, lng: 23.41659, type: "hut", desc: "נקודת יציאה וסיום ברכב (41.75666, 23.41659 - גובה 1,950 מ')" },
+  { id: "vihren-peak", name: "פסגת ויחרן (2,914 מ')", lat: 41.7672, lng: 23.3992, type: "peak", desc: "הפסגה הגבוהה ביותר בפירין (לופ דרך קאזאנה וקבאטה)" },
+  { id: "three-peaks", name: "Three Peaks Thermal Villas", lat: 41.8752, lng: 23.5265, type: "hotel", desc: "מקום הלינה בבאניה + בריכה תרמית 38°C" },
   { id: "pulse-therme", name: "ספא Pulse Therme", lat: 41.8760, lng: 23.5280, type: "spa", desc: "מתחם הספא והבריכות התרמיות בבאניה" },
-  { id: "ebike-bansko", name: "e-Bike Bansko", lat: 41.8330, lng: 23.4835, type: "bike", desc: "איסוף/התאמת אופניים חשמליים" },
+  { id: "ebike-bansko", name: "E-bike Bansko", lat: 41.8383, lng: 23.4885, type: "bike", desc: "12 Bulgaria Street, Bansko (או מסירה בווילה בבאניה)" },
   { id: "billa-bansko", name: "BILLA Bansko", lat: 41.8384, lng: 23.4862, type: "shop", desc: "סופרמרקט ראשי לקניות" },
   { id: "tmarket-bansko", name: "T MARKET Bansko (חדש!)", lat: 41.8321, lng: 23.4815, type: "shop", desc: "סניף חדש שנפתח ב-1.10.2026" },
   { id: "dabov-coffee", name: "DABOV Specialty Coffee", lat: 41.8315, lng: 23.4820, type: "cafe", desc: "קפה איכותי בבנסקו" },

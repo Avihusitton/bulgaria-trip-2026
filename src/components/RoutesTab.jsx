@@ -189,6 +189,20 @@ export default function RoutesTab({
                   </div>
                 )}
 
+                {/* Notes and Coordination */}
+                {trail.notes && (
+                  <div className={`p-3 rounded-2xl border text-xs leading-relaxed ${
+                    isRilaLakes 
+                      ? "bg-rose-50/80 border-rose-200 text-rose-900" 
+                      : "bg-[#f7f5f0] border-[#e5dfd5] text-[#52493d]"
+                  }`}>
+                    <span className="font-bold block mb-0.5">
+                      {isRilaLakes ? "סטטוס רשמי:" : "הערות ותיאום:"}
+                    </span>
+                    <span>{trail.notes}</span>
+                  </div>
+                )}
+
                 {/* Actions & Offline Checkbox */}
                 <div className="pt-1 space-y-2">
                   <label className="flex items-center justify-between p-2 rounded-xl bg-white hover:bg-[#f7f4ee] border border-[#ded8ce] cursor-pointer text-xs transition">
@@ -251,7 +265,7 @@ export default function RoutesTab({
 
                     {/* Navigation Endpoint */}
                     <a
-                      href={trail.externalLinks?.googleMaps || "https://www.google.com/maps/dir/?api=1&destination=41.7558,23.4158"}
+                      href={trail.externalLinks?.googleMaps || "https://www.google.com/maps/dir/?api=1&destination=41.75666,23.41659"}
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center justify-center gap-1 bg-white hover:bg-[#f4efe8] text-[#204234] font-medium py-2 rounded-xl text-xs border border-[#ded8ce] transition"

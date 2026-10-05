@@ -616,6 +616,8 @@ export default function MoreTab({
             </div>
 
             <div className="bg-emerald-50/70 p-3 rounded-2xl border border-emerald-100 text-xs space-y-1.5 text-slate-700">
+              <div>כתובת: <b>12 Bulgaria Street, Bansko 2770 (או מסירה ואיסוף בווילה בבאניה)</b></div>
+              <div>טלפון / WhatsApp: <b className="font-mono ltr">+359 898 915 999</b></div>
               <div>דגם אופניים: <b>{BIKES_INFO.primary.bikes}</b></div>
               <div>מחיר: <b>{BIKES_INFO.primary.price}</b></div>
               <div>זמנים: {BIKES_INFO.primary.operatingHours}</div>
@@ -626,7 +628,7 @@ export default function MoreTab({
             <div className="bg-rose-50 border border-rose-200 rounded-2xl p-3 text-xs text-rose-900 space-y-1">
               <div className="flex items-center gap-1 font-bold">
                 <AlertTriangle className="w-4 h-4 text-rose-600" />
-                <span>דגש קריטי על הזמנת יום הרכיבה (8.10):</span>
+                <span>דגש קריטי על יום הרכיבה (8.10):</span>
               </div>
               <p className="text-[11px] leading-relaxed text-rose-800">{BIKES_INFO.primary.reservationWarning}</p>
             </div>
@@ -642,7 +644,7 @@ export default function MoreTab({
 
             <div className="grid grid-cols-2 gap-2 pt-1">
               <a
-                href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi! We are Avihu and Gil from Israel. Looking forward to our e-bike fitting on Oct 5 and full day tour on Oct 8.")}`}
+                href={`https://wa.me/${BIKES_INFO.primary.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi! We are Avihu and Gil from Israel. We would like to coordinate our e-bike rental for Thursday Oct 8 (pickup at 12 Bulgaria St or delivery to Three Peaks Villa in Banya).")}`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-center gap-1.5 bg-[#204234] hover:bg-[#183328] text-white font-medium py-2.5 rounded-xl text-xs transition shadow-xs"
@@ -658,13 +660,13 @@ export default function MoreTab({
                 <span>חייג ל-e-Bike Bansko</span>
               </a>
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=41.8383,23.4885"
+                href="https://www.google.com/maps/dir/?api=1&destination=12+Bulgaria+Street,+Bansko+2770"
                 target="_blank"
                 rel="noreferrer"
                 className="col-span-2 flex items-center justify-center gap-1.5 bg-[#f2eee7] hover:bg-[#e8e2d8] text-[#204234] font-bold py-2.5 rounded-xl text-xs border border-[#d6cec0] transition"
               >
                 <Navigation className="w-3.5 h-3.5" />
-                <span>נווט לנקודת המפגש וה-Fitting בבנסקו</span>
+                <span>נווט ל-E-bike Bansko (רחוב בולגריה 12)</span>
               </a>
             </div>
           </div>

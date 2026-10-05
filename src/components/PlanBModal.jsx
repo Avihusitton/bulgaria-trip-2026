@@ -13,7 +13,7 @@ export default function PlanBModal({ isOpen, onClose }) {
         {
           title: "קיצור לאגם מוראטובו בלבד (Muratovo Lake)",
           desc: "עלייה מתונה של כ-280 מטר בלבד מבקתת ויחרן (שעתיים וחצי הלוך-חזור). אגם מרהיב למרגלות מצוק מוראטוב, ללא טיפוס חשוף.",
-          navUrl: "https://www.google.com/maps/dir/?api=1&destination=41.7558,23.4158"
+          navUrl: "https://www.google.com/maps/dir/?api=1&destination=41.75666,23.41659"
         },
         {
           title: "שביל היער ומפלי בנדריצה (Banderitsa Falls)",

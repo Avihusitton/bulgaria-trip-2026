@@ -272,24 +272,25 @@ export const SPA_PULSE_THERME = {
 
 export const BIKES_INFO = {
   primary: {
-    provider: "e-Bike Bansko",
-    status: "CONFIRMED_FITTING",
-    contact: "בעלים מקומי",
+    provider: "E-bike Bansko",
+    address: "12 Bulgaria Street, Bansko 2770",
+    status: "CONFIRMED",
+    contact: "בעלים מקומי (E-bike Bansko)",
     phone: "+359898915999",
     displayPhone: "+359 898 915 999",
     bikes: "Apache Yamka / Tuwan (גודל M, גלגלי 27.5\" - הקטן ביותר שיש)",
     price: "76€ לזוג אופניים ליום שלם",
     operatingHours: "התחלה אחרי ~08:30, החזרה לפני רדת החשיכה",
-    terms: "הבעלים הציע pickup/dropoff מ-Banya ללא עלות; המסלולים מתחילים מבנסקו.",
-    fitVerification: "Fitting לגיל (158 ס״מ) — לא בוצע ב-5.10 ונדחה לשלישי בערב (6.10) או לרביעי (7.10). לבדוק גובה מושב, מרחק בלמים ועצירה בטוחה.",
-    reservationWarning: "דגש לתיאום: אחרי ה-Fitting בשלישי/רביעי לקבל אישור סופי לסגירת זוג האופניים ליום חמישי 8.10!",
-    routeRule: "אין לקבע מסלול e-MTB קבוע לפני שהבעלים ממליץ בפועל על route שמתאים ל-30–50km, easy/moderate, non-technical."
+    terms: "הבעלים יכול למסור ולאסוף את האופניים בווילה בבאניה (pickup/dropoff), או שמתחילים בעסק בבנסקו (12 Bulgaria St). יש לוודא מולם מראש האם נקודת ההתחלה בפועל היא העסק בבנסקו או מסירה/איסוף בבאניה.",
+    fitVerification: "התאמה קלה לגיל (158 ס״מ): גודל M, בדיקת גובה מושב, מרחק בלמים ועצירה בטוחה.",
+    reservationWarning: "איסוף/מסירה בבאניה או בבנסקו — לוודא מולם בוואטסאפ (+359 898 915 999) בערב רביעי או בוקר חמישי.",
+    routeRule: "המטרה היא רכיבה רגועה ומהנה של כ-30–50 ק״מ על אספלט, כורכר ושבילי יער קלים — ללא סינגלים טכניים וללא אנדורו."
   },
   backup: {
     provider: "Sport Box Bansko",
     status: "BACKUP",
     terms: "€150 לזוג. 10:00–19:00. גודל M, טווח 50–60 ק״מ. כולל קסדה ומולטי-טול. ללא פיקדון/תשלום מראש. איסוף בבנסקו בלבד.",
-    warning: "האישור המקורי היה ל-7.10, ולכן זמינות ל-8.10 עדיין VERIFY."
+    warning: "ספק גיבוי אם יש צורך."
   },
   rejected: {
     provider: "Traventuria",
@@ -380,78 +381,77 @@ export const DAYS_PLAN = [
     dayNumber: 2,
     date: "2026-10-06",
     dayOfWeek: "שלישי",
-    title: "שבעת אגמי רילה המרהיבים (Seven Rila Lakes) והרכבל האלפיני",
+    title: "העפלה לפירמידת השיש — פסגת ויחרן (2,914 מ')",
     status: "PLANNED",
-    subtitle: "טרק אלפיני עוצר נשימה בין 7 אגמי הקרחונים ברילה + רכבל כיסאות פתוח וערב תרמי בווילה",
-    keyAlert: "🏔️ טיפ שטח מהלב: הרכבל מפיונרסקה פעיל בשעות 08:30–16:30. בגובה 2,500 מטר (אגם הדמעה) יש רוח קרירה — קחו שכבות פליז ומעיל רוח בתיק! סיום הטרק מאפשר לקפוץ בערב ל-e-Bike Bansko להתאמת אופניים קלה לקראת יום חמישי.",
+    subtitle: "הטרק הגדול בפירין: נסיעה ברכב ל-Vihren Hut (41.75666, 23.41659) → לופ דרך Kazanite/Premkata בעלייה ו-Kabata בירידה",
+    keyAlert: "🚗 לוגיסטיקה ושער החלטה: נוסעים ברכב מהווילה ישירות עד Vihren Hut / хижа Вихрен (נקודת ניווט מדויקת: 41.75666, 23.41659). אין רכבל או רכבת. בודקים בבוקר שהכביש פתוח ושאין עיכוב בגלל אימוני רולר-סקי. קצב טיול נינוח, שומרים על חוויה יפה ומהנה ולא יום עבודה!",
     trailDetails: {
-      name: "Seven Rila Lakes Loop (Седемте рилски езера)",
-      referenceUrl: "https://www.wikiloc.com/hiking-trails/seven-rila-lakes-panichishte-sedemte-rilski-ezera-26388481",
-      distance: "9.2 ק״מ",
-      elevationGain: "+510 מטר / -510 מטר",
-      duration: "~4.5–5.5 שעות (קצב צילום ורוגע)",
-      maxAltitude: "2,535 מטר",
-      difficulty: "בינוני נעים (Moderate) — רכבל כיסאות נופי, שביל מסומן היטב",
-      routePoints: "Pionerska Lift → Rilski Ezera Hut → Dolnoto → Ribnoto → Trilistnika → Bliznaka → Babreka → Okoto → Sulzata → Plateau → Upper Lift"
+      name: "Vihren Peak Loop via Kazanite & Premkata",
+      referenceUrl: "https://www.wikiloc.com/hiking-trails/kazana-shelter-premkata-und-vihren-von-vihren-hut-284315810",
+      distance: "10.4 ק״מ",
+      elevationGain: "+990 מטר / -990 מטר",
+      duration: "~6–7.5 שעות (קצב נינוח ומתון)",
+      maxAltitude: "2,914 מטר",
+      difficulty: "אתגרי אלפיני (הטרק הגדול בפירין) — ללא רכבל, שביל סלעים מסומן, נוף פנורמי מרהיב",
+      routePoints: "Vihren Hut (41.75666, 23.41659) → Kazanite / Kazana Shelter → Premkata Saddle → Vihren Peak (2914m) → Kabata → Vihren Hut"
     },
     timeline: [
-      { time: "07:30", action: "קפה וארוחת בוקר בווילה, התארגנות עם שכבות חמות ונשנושים לדרך" },
-      { time: "08:15", action: "נסיעה צפונה ברכב (VW T-Roc) לעבר רכס הרי רילה (כ-85 ק״מ, כשעה ו-40 דק')" },
-      { time: "10:00", action: "הגעה לחניית רכבל שבעת האגמים (בקתת פיונרסקה / Pionerska Hut), רכישת כרטיסים ועולים ברכבל הכיסאות הפתוח (20 דק' נוף אלפיני)" },
-      { time: "10:30", action: "הגעה לבקתת רילסקי אזרה (2,150 מ') ותחילת הטרק המעגלי בין 7 האגמים הקרחוניים" },
-      { time: "13:00", action: "תצפית שיא פנורמית מעל אגם הדמעה (2,535 מ') — מראה עוצר נשימה של כל 7 האגמים יחד!" },
-      { time: "15:15", action: "חזרה לבקתת הרכבל העליונה וירידה ברכבל (חובה לתפוס רכבל לפני סגירה ב-16:30)" },
-      { time: "16:00", action: "נסיעה חזרה דרומה לעמק בנסקו ובאניה" },
-      { time: "17:45", action: "עצירה ב-e-Bike Bansko להתאמת אופניים קלה לגיל (אם יש כוח, או שדוחים לרביעי)" },
-      { time: "19:00", action: "טבילה חלומית מרגיעה בבריכה התרמית החמה בווילה (38°C) או בספא Pulse Therme" }
+      { time: "07:30", action: "קפה וארוחת בוקר בווילה בבאניה, בדיקת מזג אוויר וסטטוס פתיחת כביש ויחרן (אימוני רולר-סקי)" },
+      { time: "08:30", action: "נסיעה רגועה ברכב (VW T-Roc) במעלה הרי פירין ישירות לחניית Vihren Hut (כ-35 דק')" },
+      { time: "09:15", action: "הגעה לחניית בקתת ויחרן (41.75666, 23.41659), התארגנות עם מקלות הליכה, מעילי רוח ומים" },
+      { time: "09:30", action: "תחילת ההעפלה דרך עמק הקאזאנה (Kazanite) המרשים אל עבר אוכף הפרמקטה" },
+      { time: "12:45", action: "עומדים על פסגת ויחרן (2,914 מ')! חגיגת עשור יחד, תמונות מרהיבות ונשנוש בראש ההר" },
+      { time: "13:30", action: "ירידה מתונה ובטוחה דרך אוכף הקבאטה (Kabata) לכיוון הבקתה" },
+      { time: "16:15", action: "סיום הטרק בבקתת ויחרן — תה חם, חיוך ענק ונסיעה רגועה חזרה לווילה" },
+      { time: "17:30", action: "טבילה חלומית מרגיעה בבריכה התרמית החמה בווילה (38°C) לשחרור מלא של השרירים" },
+      { time: "19:30", action: "ארוחת ערב חמה, יין ומנוחה מושלמת לקראת יום האגמים הנינוח מחר" }
     ],
     checklist: [
-      "נעלי הליכה/טרקים איכותיות ושכבות ביגוד (פליז + מעיל רוח/גשם ל-2,500 מ')",
-      "כרטיסי רכבל הלוך-חזור (כ-25-30 BGN לאדם, ירידה אחרונה עד 16:30)",
-      "מים ונשנושי אנרגיה ליום שלם בהר",
-      "הורדת מפת ומסלול 7 האגמים לטלפון ב-Offline",
-      "סגירת התאמת אופניים ב-e-Bike Bansko (הערב או מחר ברביעי)",
-      "טבילה בבריכה התרמית החמה בווילה להרפיית שרירים"
+      "בדיקת פתיחת הכביש מבנסקו לבקתת ויחרן (אימוני רולר-סקי)",
+      "אימות שמיים בהירים ורוחות בטוחות בפסגה (2,914 מ')",
+      "מעיל רוח/גשם, שכבה טרמית חמה וכובע בתיק",
+      "נעלי טרקים איכותיות, מקלות הליכה ולפחות 2 ליטר מים לאדם",
+      "קובץ GPX שמור במכשיר ב-Wikiloc / Garmin",
+      "טבילה בבריכה התרמית הפרטית של הווילה (38°C)"
     ],
-    planB: "אם יש רוחות חזקות ברכס העליון או שהרכבל סגור: מטיילים בחלק הנמוך של האגמים ביער, או מבקרים במנזר רילה (Rila Monastery) המפורסם שנמצא בקרבת מקום ומוגן מרוחות."
+    planB: "אם הפסגה מכוסה ענני סערה, רוחות חזקות או קרח: לא מסתכנים! עוברים למסלול עמקים מוגן, טיול מפלים, או מקדימים את חמשת האגמים הנמוכים יותר."
   },
   {
     dayNumber: 3,
     date: "2026-10-07",
     dayOfWeek: "רביעי",
-    title: "העפלה לפירמידת השיש — פסגת ויחרן (2,914 מ')",
+    title: "חמשת אגמי בנדריצה הצלולים (Five Lakes Loop)",
     status: "PLANNED",
-    subtitle: "טרק העפלה אל הפסגה הגבוהה ביותר ברכס פירין — דרך עמק הקאזאנה ואוכף הפרמקטה",
-    keyAlert: "🦅 הנוף על הפסגה עוצר נשימה: הגג של בולגריה נפרש תחתינו! ב-2,900 מטר קריר ויש רוח — שמים בתיק מעיל חם, כפפות וכובע, ויוצאים מוקדם לטרוף את ההר.",
+    subtitle: "יום אלפיני קל ונינוח: נסיעה ברכב ל-Vihren Hut (41.75666, 23.41659) → טרק האגמים ב-Garmin → ספא וטבילה",
+    keyAlert: "🌊 יום קל ונינוח: אחרי הפסגה של אתמול, היום מטיילים ברוגע מלא בין 5 אגמי הקרחונים המרהיבים. המסלול כבר טעון ב-Garmin (8.35 ק״מ, 474 מ' טיפוס) ומאפשר עצירות פיקניק וצילום בלי לחץ. שומרים על חופשה נעימה ולא יום עבודה!",
     trailDetails: {
-      name: "Vihren Peak via Kazana & Premkata",
-      referenceUrl: "https://www.wikiloc.com/hiking-trails/kazana-shelter-premkata-und-vihren-von-vihren-hut-284315810",
-      distance: "10.4 ק״מ",
-      elevationGain: "+990 מטר / -990 מטר",
-      duration: "6–7.5 שעות (קצב מתון)",
-      maxAltitude: "2,914 מטר",
-      difficulty: "אתגרי אלפיני (Strenuous Alpine) — עלייה וירידה בסלעים, חוויה בלתי נשכחת",
-      routePoints: "Vihren Hut → Kazanite / Kazana Shelter → Premkata Saddle → Vihren Peak (2914m) → Kabata → Vihren Hut"
+      name: "Five Lakes Loop (Banderishki Lakes)",
+      referenceUrl: "https://www.wikiloc.com/hiking-trails/okoto-lake-lago-dalgoto-and-muratovo-ezero-from-vihren-hut-270168580",
+      distance: "8.35 ק״מ",
+      elevationGain: "+474 מטר / -474 מטר",
+      duration: "~4–5 שעות (קצב צילום ורוגע מלא)",
+      maxAltitude: "2,326 מטר",
+      difficulty: "בינוני ונינוח (הוטמע ב-Garmin) — שבילים יפהפיים, אגמים צלולים",
+      routePoints: "Vihren Hut (41.75666, 23.41659) → Okoto → Ribno → Zhabeshko → Dalgoto → Muratovo → Vihren Hut"
     },
     timeline: [
-      { time: "06:30", action: "השכמה מוקדמת, קפה חם ובדיקת תחזית שמיים ורוחות לפסגה" },
-      { time: "07:30", action: "נסיעה לבקתת ויחרן, חניה והתארגנות עם כל הציוד החם" },
-      { time: "08:15", action: "תחילת ההעפלה דרך עמק הקאזאנה הדרמטי אל אוכף הפרמקטה" },
-      { time: "11:45", action: "עומדים על פסגת ויחרן (2,914 מ')! חיבוק חגיגי של עשור יחד, תמונות מטורפות ונשנוש" },
-      { time: "12:30", action: "ירידה מתונה ובטוחה דרך אוכף הקבאטה (Kabata) לכיוון הבקתה" },
-      { time: "15:30", action: "סיום הטרק בבקתת ויחרן — תה חם, חיוך ענק ונסיעה לווילה" },
-      { time: "17:00", action: "מנוחה מלכותית בבריכה התרמית הפרטית בווילה (38°C) להרפיית השרירים" },
-      { time: "19:30", action: "ארוחת ערב חמה, כוס יין ווידוא שכרטיסי הטיסה לחזור שמורים בטלפון אופליין" }
+      { time: "08:30", action: "השכמה נעימה, קפה וארוחת בוקר שקטה בווילה" },
+      { time: "09:30", action: "נסיעה ברכב ל-Vihren Hut / хижа Вихрен (נקודת חניה: 41.75666, 23.41659)" },
+      { time: "10:15", action: "תחילת המסלול הנינוח בין האגמים (מעקב עם ה-Garmin)" },
+      { time: "11:15", action: "הגעה לאגם ריבנו ואגם ז'אבשקו — השתקפויות מרהיבות של הרי פירין במים" },
+      { time: "12:30", action: "פיקניק צהריים שליו לצד אגם מוראטובו עם נוף לפסגת מוראטוב" },
+      { time: "14:45", action: "סיום המסלול בבקתת ויחרן, קפה או תה חם ונסיעה חזרה לווילה" },
+      { time: "16:30", action: "טבילה בבריכה התרמית הפרטית של הווילה (38°C) או פינוק בספא Pulse Therme" },
+      { time: "18:30", action: "תיאום קצר בוואטסאפ מול E-bike Bansko (+359 898 915 999) לגבי נקודת האיסוף/מסירה של האופניים ליום חמישי (בנסקו מול באניה)" }
     ],
     checklist: [
-      "אימות שמיים בהירים ורוחות רגועות ב-2,914 מ'",
-      "מעיל Shell חסין רוח, כובע חם וכפפות בתיק",
-      "פנס ראש קטן ומטען נייד לטלפון",
-      "לפחות 2 ליטר מים לאדם ונשנושי אנרגיה טעימים",
-      "קובץ GPX שמור במכשיר ב-Wikiloc / Garmin",
-      "⭐ בדיקה בנחת: לוודא שכרטיסי העלייה לחזור שמורים בטלפון Offline"
+      "הפעלת המסלול הטעון ב-Garmin (8.35 ק״מ, 474 מ' טיפוס)",
+      "נשנושי פיקניק ומים לעצירה רגועה ליד האגמים",
+      "נעלי טרקים ומעיל רוח קל",
+      "תיאום בוואטסאפ מול E-bike Bansko לקראת יום חמישי",
+      "טבילה במים התרמיים החמים להרפיית שרירים"
     ],
-    planB: "אם הפסגה מכוסה ענני סערה, רוחות חזקות או קרח: לא מסתכנים! עושים טרק עמקים מתון, מבקרים במפלי בנדריצה המרשימים, או נוסעים לטיול שלכת וטעימות במלניק."
+    planB: "אם מזג האוויר באגמים סגרירי או רוצים מסלול קצר עוד יותר: עולים רק עד אגם מוראטובו היפהפה (4.2 ק״מ הלוך-חזור) וחוזרים ליום ספא ורוגע."
   },
   {
     dayNumber: 4,
@@ -459,26 +459,27 @@ export const DAYS_PLAN = [
     dayOfWeek: "חמישי",
     title: "שבילי יער, אופני e-MTB, קפה איכותי וטבילה לילית",
     status: "PLANNED",
-    subtitle: "רכיבה זורמת בעמק פירין → קפה משובח בבנסקו → Late Stay עד מאוחר בווילה",
-    keyAlert: "🚲 יום של הנאה צרופה: מנוע העזר באופניים עושה את כל העבודה הקשה! רוכבים בכיף בין העצים, נושמים אוויר הרים ומסיימים את היום בווילה עד חצות.",
+    subtitle: "רכיבה זורמת וקלה בעמק פירין (30–50 ק״מ) → E-bike Bansko (רח' בולגריה 12 / מסירה בבאניה) → Late Stay בווילה",
+    keyAlert: "🚲 רכיבה כיפית וקלילה: 30–50 ק״מ על אספלט, כורכר ושבילי יער נוחים (בלי אנדורו ובלי סינגלים טכניים). ספק האופניים: E-bike Bansko ברחוב 12 Bulgaria Street בבנסקו (טל' +359 898 915 999). בודקים מולם מראש האם הם מביאים את האופניים לווילה בבאניה או שאוספים מהעסק. נשארים בווילה עד חצות!",
     trailDetails: {
       name: "Scenic e-MTB Valley & Forest Route",
-      distance: "30–45 ק״מ",
+      distance: "30–50 ק״מ",
       elevationGain: "מתון (דרכי עפר כבושות, אספלט ויער קל)",
       duration: "יום רגוע עם עצירות קפה (start after ~08:30, return before dark)",
-      difficulty: "קל עד בינוני (Non-Technical)",
-      routePoints: "Bansko → Banya Valley → Pine Forest Trails → DABOV Specialty Coffee → Villa"
+      difficulty: "קל עד בינוני (Non-Technical, ללא אנדורו)",
+      routePoints: "Bansko (12 Bulgaria St) / Banya Villa → Valley Trails → Pine Forest → DABOV Coffee → Villa"
     },
     timeline: [
       { time: "08:30", action: "בוקר רגוע בווילה, ארוחה מפנקת וטבילת בוקר במים החמים" },
-      { time: "09:30", action: "קבלת האופניים החשמליים (e-Bike Bansko) ויציאה למסלול היערות" },
-      { time: "11:30", action: "רכיבה שלווה בשבילי האורנים והעמק עם נוף פנורמי להרי פירין" },
-      { time: "13:30", action: "עצירת קפה מעולה ואיכותי ב-DABOV Specialty Coffee בבנסקו" },
-      { time: "16:00", action: "החזרת האופניים בנחת ונסיעה חזרה לווילה בבאניה" },
-      { time: "17:00", action: "לילה קסום בווילה (Late Stay מאושר!): ארוחה חגיגית, בריכה תרמית ומוזיקה טובה" },
-      { time: "23:00", action: "מנוחה, אריזה רגועה ויציאה מאוחרת בלילה לכיוון סופיה" }
+      { time: "09:30", action: "קבלת אופני ה-e-MTB מ-E-bike Bansko (מסירה בווילה או איסוף ברחוב בולגריה 12)" },
+      { time: "10:30", action: "יציאה לרכיבה שלווה וזורמת בשבילי היער והעמק (30–50 ק״מ, קל וללא מקטעים טכניים)" },
+      { time: "13:30", action: "עצירת קפה מעולה ואיכותי ב-DABOV Specialty Coffee בבנסקו (רח' פירין 84)" },
+      { time: "15:30", action: "סיום הרכיבה, החזרת האופניים (איסוף מהווילה או החזרה בעסק) ונסיעה לווילה" },
+      { time: "17:00", action: "לילה קסום בווילה (Late Stay מאושר עד חצות!): ארוחה חגיגית, בריכה תרמית ורוגע" },
+      { time: "23:00", action: "מנוחה, אריזה רגועה ויציאה מאוחרת בלילה לכיוון נמל התעופה סופיה" }
     ],
     checklist: [
+      "וידוא מול E-bike Bansko היכן מתחילים (מסירה בבאניה או איסוף ב-12 Bulgaria St)",
       "קסדות, בקבוקי מים ומשקפי שמש לרכיבה",
       "טלפון טעון לניווט ולתמונות בשבילי היער",
       "עצירת אספרסו ב-DABOV בבנסקו",
@@ -516,127 +517,112 @@ export const DAYS_PLAN = [
 
 export const TRAILS_LIST = [
   {
-    id: "rila-lakes",
-    name: "שבעת אגמי רילה (Seven Rila Lakes Loop)",
-    wikilocTitle: "Seven Rila Lakes - Panichishte (Sedemte rilski ezera)",
-    referenceUrl: "https://www.wikiloc.com/hiking-trails/seven-rila-lakes-panichishte-sedemte-rilski-ezera-26388481",
-    status: "PLANNED",
-    dayAssigned: 2,
-    datePlanned: "6.10.2026",
-    distanceKm: 9.2,
-    elevationGainM: 510,
-    elevationLossM: 510,
-    durationHours: "~4.5–5.5 שעות (קצב צילום ורוגע)",
-    maxAltitudeM: 2535,
-    difficulty: "בינוני נעים (Moderate) — רכבל כיסאות פתוח",
-    trailType: "מעגלי (Loop)",
-    startPoint: "בקתת פיונרסקה / רכבל רילה (Pionerska Hut)",
-    lakes: [
-      "אגם הדמעה (Salzata / The Teardrop - 2535m) — הגבוה והצלול ביותר",
-      "אגם העין (Okoto / The Eye - 2440m) — העמוק ביותר (37.5 מ')",
-      "אגם הכליה (Babreka / The Kidney - 2282m) — המפורסם והמצולם ביותר",
-      "אגם התאומים (Bliznaka / The Twin - 2243m) — בעל השטח הגדול ביותר",
-      "אגם התלתן (Trilistnika / The Trefoil - 2216m) — צורה בלתי רגולרית",
-      "אגם הדגים (Ribnoto / The Fish Lake - 2184m) — הרדוד ביותר, סמוך לבקתה",
-      "האגם התחתון (Dolnoto / The Lower Lake - 2095m) — מנקז את כל האגמים"
-    ],
-    hazards: [
-      "שעת סגירת רכבל כיסאות: ירידה אחרונה עד 16:30! לתכנן זמנים בהתאם",
-      "רוחות קרירות ושינויי מזג אוויר פתאומיים בפסגת האגמים (2,535 מ')",
-      "שבילים סלעיים בירידה מהאוכף — נעלי טרקים איכותיות חובה",
-      "נסיעה של כשעה ו-40 דק' מבאניה/בנסקו לחניית הרכבל (Pionerska)"
-    ],
-    gpxFilename: "Seven_Rila_Lakes_Loop.gpx",
-    externalLinks: {
-      wikiloc: "https://www.wikiloc.com/hiking-trails/seven-rila-lakes-panichishte-sedemte-rilski-ezera-26388481",
-      googleMaps: "https://maps.google.com/?q=42.2398,23.3275",
-      waze: "https://waze.com/ul?ll=42.2398,23.3275&navigate=yes"
-    }
-  },
-  {
-    id: "five-lakes",
-    name: "חמשת האגמים (Five Lakes Loop - חלופת פירין)",
-    wikilocTitle: "Okoto lake, Lago Dalgoto and Muratovo ezero from Vihren hut",
-    referenceUrl: "https://www.wikiloc.com/hiking-trails/okoto-lake-lago-dalgoto-and-muratovo-ezero-from-vihren-hut-270168580",
-    status: "BACKUP",
-    dayAssigned: null,
-    datePlanned: "חלופה בפירין",
-    distanceKm: 8.27,
-    elevationGainM: 468,
-    elevationLossM: 468,
-    durationHours: "~4.5–5 שעות (הקלטה: 4:09)",
-    maxAltitudeM: 2318,
-    difficulty: "בינוני (Moderate)",
-    trailType: "מעגלי (Loop)",
-    startPoint: "בקתת ויחרן (Vihren Hut)",
-    lakes: [
-      "אגם אוקוטו / העין (Okoto / The Eye - 2026m)",
-      "אגם ז'אבשקו / הצפרדע (Zhabeshko / Frog Lake - 2326m)",
-      "אגם דאלגוטו / הארוך (Dalgoto / Long Lake - 2310m)",
-      "אגם ריבנו / הדגים (Ribno Banderishko Lake - 2190m)",
-      "אגם מוראטובו (Muratovo Lake - 2230m)"
-    ],
-    hazards: [
-      "קטעי Ribno ו-Dalgoto סלעיים ולא נעימים ברטיבות או קרח",
-      "מעבר בולדרים בעלייה לאגם ז'אבשקו",
-      "שינויי מזג אוויר וערפל פתאומי בהרים",
-      "רוחות קרירות במעברים הגבוהים"
-    ],
-    gpxFilename: "Five_Lakes_Loop_Vihren.gpx",
-    externalLinks: {
-      wikiloc: "https://www.wikiloc.com/hiking-trails/okoto-lake-lago-dalgoto-and-muratovo-ezero-from-vihren-hut-270168580",
-      googleMaps: "https://maps.google.com/?q=41.7558,23.4158"
-    }
-  },
-  {
     id: "vihren-peak",
-    name: "פסגת ויחרן (Vihren Peak via Kazana)",
+    name: "פסגת ויחרן (Vihren Peak Loop)",
     wikilocTitle: "Kazana shelter, Premkata und Vihren von Vihren hut (Recorded Sep 2026)",
     referenceUrl: "https://www.wikiloc.com/hiking-trails/kazana-shelter-premkata-und-vihren-von-vihren-hut-284315810",
     status: "PLANNED",
-    dayAssigned: 3,
-    datePlanned: "7.10.2026",
+    dayAssigned: 2,
+    datePlanned: "6.10.2026",
     distanceKm: 10.4,
     elevationGainM: 990,
     elevationLossM: 990,
-    durationHours: "6:00 – 7:30 (~7:45 recorded)",
+    durationHours: "~6:00 – 7:30 שעות (קצב נינוח ומתון)",
     maxAltitudeM: 2914,
-    difficulty: "קשה / אלפיני תלול (Difficult Alpine)",
+    difficulty: "אתגרי אלפיני (הטרק הגדול בפירין)",
     trailType: "מעגלי (Loop)",
-    startPoint: "בקתת ויחרן (Vihren Hut)",
-    direction: "עלייה דרך Kazanite / Premkata, ירידה מתונה דרך Kabata חזרה לבקתה",
+    startPoint: "חניית בקתת ויחרן / хижа Вихрен (41.75666, 23.41659)",
+    direction: "עלייה דרך עמק הקאזאנה ואוכף הפרמקטה, ירידה מתונה ובטוחה דרך אוכף הקבאטה (Kabata) חזרה לבקתה",
     keyWaypoints: [
-      "בקתת ויחרן (1,950 מ')",
-      "קרקס הקרחונים קאזאנה ומחסה Kazana Shelter (2,445 מ')",
+      "חניית בקתת ויחרן (41.75666, 23.41659 - גובה 1,950 מ')",
+      "עמק הקאזאנה ומחסה Kazana Shelter (2,445 מ')",
       "אוכף הפרמקטה (Premkata Saddle - 2,660 מ')",
-      "פסגת ויחרן - הפסגה השנייה בגובהה בבולגריה (2,914 מ')",
+      "פסגת ויחרן - הגג של הרי פירין (2,914 מ')",
       "אוכף הקבאטה (Kabata Saddle - 2,600 מ')",
-      "ירידה בשביל הדרומי חזרה לבקתת ויחרן"
+      "ירידה מתונה בשביל הדרומי חזרה לרכב בבקתת ויחרן"
     ],
     hazards: [
-      "מדרונות שיש תלולים מאוד וחלקים במיוחד כשרטוב או קפוא",
-      "חשיפה לרוחות חזקות על הרכס והאוכף",
-      "במקרה של שלג, קרח על השיש, ראות ירודה או רוחות עזות — עוברים מיד לחלופה המפנקת של Plan B"
+      "נסיעה ברכב ישירות לבקתה (ללא רכבל/רכבת) — לבדוק בבוקר שהכביש פתוח מרולר-סקי",
+      "מדרונות שיש וסלעים — הליכה בטוחה עם נעלי טרקים ומקלות",
+      "רוחות וקרירות בפסגה (2,914 מ') — שכבות פליז ומעיל רוח בתיק",
+      "שומרים על יום טיול מהנה ולא יום עבודה!"
     ],
     gpxFilename: "Vihren_Peak_Loop_Kazana.gpx",
     externalLinks: {
       wikiloc: "https://www.wikiloc.com/hiking-trails/kazana-shelter-premkata-und-vihren-von-vihren-hut-284315810",
-      googleMaps: "https://maps.google.com/?q=41.7672,23.3992"
+      googleMaps: "https://maps.google.com/?q=41.75666,23.41659",
+      waze: "https://waze.com/ul?ll=41.75666,23.41659&navigate=yes"
+    }
+  },
+  {
+    id: "five-lakes",
+    name: "חמשת אגמי בנדריצה (Five Lakes Loop)",
+    wikilocTitle: "Okoto lake, Lago Dalgoto and Muratovo ezero from Vihren hut",
+    referenceUrl: "https://www.wikiloc.com/hiking-trails/okoto-lake-lago-dalgoto-and-muratovo-ezero-from-vihren-hut-270168580",
+    status: "PLANNED",
+    dayAssigned: 3,
+    datePlanned: "7.10.2026",
+    distanceKm: 8.35,
+    elevationGainM: 474,
+    elevationLossM: 474,
+    durationHours: "~4–5 שעות (קצב צילום ורוגע מלא)",
+    maxAltitudeM: 2326,
+    difficulty: "בינוני ונינוח (הוטמע ב-Garmin)",
+    trailType: "מעגלי (Loop)",
+    startPoint: "חניית בקתת ויחרן / хижа Вихрен (41.75666, 23.41659)",
+    lakes: [
+      "אגם אוקוטו / העין (Okoto / The Eye - 2,026 מ')",
+      "אגם ז'אבשקו / הצפרדע (Zhabeshko / Frog Lake - 2,326 מ')",
+      "אגם דאלגוטו / הארוך (Dalgoto / Long Lake - 2,310 מ')",
+      "אגם ריבנו / הדגים (Ribno Banderishko Lake - 2,190 מ')",
+      "אגם מוראטובו (Muratovo Lake - 2,230 מ')"
+    ],
+    hazards: [
+      "יום קל ונינוח בהרבה מיום הפסגה",
+      "מעבר בולדרים קל בעלייה לאגם ז'אבשקו",
+      "המסלול טעון ומוכן מראש בשעון ה-Garmin"
+    ],
+    gpxFilename: "Five_Lakes_Loop_Vihren.gpx",
+    externalLinks: {
+      wikiloc: "https://www.wikiloc.com/hiking-trails/okoto-lake-lago-dalgoto-and-muratovo-ezero-from-vihren-hut-270168580",
+      googleMaps: "https://maps.google.com/?q=41.75666,23.41659",
+      waze: "https://waze.com/ul?ll=41.75666,23.41659&navigate=yes"
     }
   },
   {
     id: "ebike-valley",
-    name: "מסלול אופניים נופי בעמק בנסקו ובאניה",
-    status: "VERIFY",
+    name: "רכיבת e-MTB קלילה בעמק ובשבילי היער",
+    status: "PLANNED",
     dayAssigned: 4,
     datePlanned: "8.10.2026",
     distanceKm: "30–50 ק״מ",
-    elevationGainM: "מתון (אספלט ודרכי יער כבושות)",
+    elevationGainM: "מתון וזורם (אספלט ושבילי יער כבושים)",
     durationHours: "יום רגוע (יציאה אחרי ~08:30, סיום לפני חשיכה)",
     maxAltitudeM: 1100,
-    difficulty: "קל עד בינוני (Non-Technical)",
-    trailType: "נופי / אספלט ודרכי יער כבושות",
-    notes: "המסלול המדויק יימסר ישירות על ידי בעל e-Bike Bansko במפגש ב-5.10 לפי התנאים ועצירת קפה ב-DABOV (רחוב פירין 84)."
+    difficulty: "קל וזורם (Non-Technical, ללא סינגלים/אנדורו)",
+    trailType: "נופי / אספלט ודרכי יער נוחות",
+    startPoint: "E-bike Bansko (רחוב 12 Bulgaria St) או מסירה בווילה בבאניה",
+    notes: "אופניים דרך E-bike Bansko (טל' +359 898 915 999). בודקים מולם מראש האם מתחילים בעסק בבנסקו או שהם מביאים לווילה בבאניה. עצירת קפה ב-DABOV (רח' פירין 84).",
+    externalLinks: {
+      googleMaps: "https://maps.google.com/?q=41.8383,23.4885",
+      whatsapp: "https://wa.me/359898915999"
+    }
+  },
+  {
+    id: "rila-lakes",
+    name: "שבעת אגמי רילה (Seven Rila Lakes) — ירד מהתוכנית",
+    status: "CANCELLED",
+    dayAssigned: null,
+    datePlanned: "בוטל (רכבל סגור לתחזוקה)",
+    distanceKm: 9.2,
+    elevationGainM: 510,
+    elevationLossM: 510,
+    durationHours: "בוטל",
+    maxAltitudeM: 2535,
+    difficulty: "לא רלוונטי",
+    trailType: "מעגלי",
+    startPoint: "בקתת פיונרסקה (רכבל סגור עד 31.10)",
+    notes: "התקבלה הודעה רשמית ממפעיל הרכבל שהרכבל סגור לתחזוקה שנתית עד 31.10.2026, ואין דרך ממונעת חלופית חוקית לעלות מלבד הליכה מפרכת ומיותרת מהחלק התחתון. התוכנית מתמקדת בטרקים המעולים של פירין ישירות מבקתת ויחרן ברכב."
   },
   {
     id: "plan-b-muratovo",
